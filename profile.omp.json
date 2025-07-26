@@ -15,6 +15,12 @@
         {
           "type": "text",
           "style": "plain",
+          "template": "\n"
+        },
+
+        {
+          "type": "text",
+          "style": "plain",
           "foreground": "p:lavender",
           "template": "❯ "
         },
