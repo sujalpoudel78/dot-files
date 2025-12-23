@@ -12,7 +12,7 @@ general:
   config_reload_commands: []
 
   # Whether to automatically focus windows underneath the cursor.
-  focus_follows_cursor: false
+  focus_follows_cursor: true
 
   # Whether to switch back and forth between the previously focused
   # workspace when focusing the current workspace.
@@ -48,10 +48,10 @@ gaps:
 
   # Gap between windows and the screen edge.
   outer_gap:
-    top: '4px'
-    right: '4px'
-    bottom: '4px'
-    left: '4px'
+    top: '3px'
+    right: '6px'
+    bottom: '6px'
+    left: '6px'
 
 window_effects:
   # Visual effects to apply to the focused window.
@@ -92,8 +92,8 @@ window_effects:
       enabled: true
       style: 'rounded'
     transparency:
-      enabled: false
-      opacity: '0%'
+      enabled: true
+      opacity: '96%'
 
 window_behavior:
   # New windows are created in this state whenever possible.
@@ -148,6 +148,7 @@ window_rules:
       - window_process: { equals: 'VirtualBox' }
       - window_process: { equals: 'VirtualBoxVM' }
       - window_process: { equals: 'qbittorrent' }
+      - window_process: { equals: 'msiexec' }
       - window_process: { equals: 'PhoneExperienceHost' }
       # - window_process: { equals: 'vlc' }
       # - window_process: { equals: 'Spotify' }
@@ -169,6 +170,8 @@ window_rules:
         window_class: { not_regex: 'OpusApp' }
       - window_process: { equals: 'POWERPNT' }
         window_class: { not_regex: 'PPTFrameClass' }
+      - window_process: { equals: 'explorer' }
+        window_class: { regex: 'operationstatuswindow' }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
@@ -257,7 +260,7 @@ keybindings:
 
   # Close focused window.
   - commands: ['close']
-    bindings: ['alt+shift+w']
+    bindings: ['alt+q']
 
   # Kill GlazeWM process safely.
   - commands: ['wm-exit']
@@ -277,6 +280,7 @@ keybindings:
   - commands: ['shell-exec wt']
     bindings: ['alt+shift+enter']
 
+    
   # # Chrome
   # - commands: ['shell-exec chrome']
   #   bindings: ['alt+b']
