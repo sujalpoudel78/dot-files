@@ -17,7 +17,7 @@
           "style": "plain",
           "template": "\n"
         },
-
+        
         {
           "type": "text",
           "style": "plain",
@@ -61,11 +61,12 @@
           "style": "plain",
           "foreground": "p:pink",
           "properties": {
-            "style": "dallas",
-            "threshold": 0
+            "style": "round",
+            "threshold": 500
           },
-          "template": "\uf252 {{ .FormattedMs }}s "
+          "template": "\uf252 {{ .FormattedMs }}"
         },
+        
         {
           "foreground": "p:lavender",
           "properties": {
@@ -81,6 +82,7 @@
             "revert_icon": "\uf0e2 ",
             "tag_icon": "\uf412 "
           },
+          
           "style": "plain",
           "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
           "type": "git"
@@ -97,6 +99,11 @@
           "template": "\uf105",
           "type": "text"
         }
+        // {
+        //   "type": "text",
+        //   "style": "plain",
+        //   "template": "\n "
+        // }
       ],
       "type": "prompt"
     }
