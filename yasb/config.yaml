@@ -1,10 +1,6 @@
 watch_stylesheet: true
 watch_config: true
 debug: false
-komorebi:
-  start_command: "komorebic start --whkd"
-  stop_command: "komorebic stop --whkd"
-  reload_command: "komorebic stop --whkd && komorebic start --whkd"
 bars:
   primary-bar:
     enabled: true
@@ -44,21 +40,18 @@ bars:
       left: [
           # "home", 
           "clock",
-          "glazewm_workspaces", 
-          # "komorebi_workspaces", 
+          "glazewm_workspaces",  
           "taskbar",
           "media",
-          # "weather",
       ]
       center: [
           "active_window",
         ]
       right: [
           "systray",
-          # "weather",
+          "weather",
           # "cpu",
           # "memory",
-          # "disk",
           "wifi",
           "volume",
           "battery",
@@ -85,18 +78,14 @@ widgets:
       alignment: "left"
       offset_left: 4
       offset_top: 0
+      
   glazewm_workspaces:
     type: "glazewm.workspaces.GlazewmWorkspacesWidget"
     options:
       offline_label: "GlazeWM Offline"
       hide_empty_workspaces: true
       hide_if_offline: true
-  komorebi_workspaces:
-    type: "komorebi.workspaces.WorkspaceWidget"
-    options:
-      label_offline: "KomorebiWM Offline"
-      hide_empty_workspaces: true
-      hide_if_offline: true
+
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
@@ -104,6 +93,7 @@ widgets:
       update_interval: 2000
       callbacks:
         on_right: "exec cmd /c Taskmgr"
+  
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -112,22 +102,7 @@ widgets:
       update_interval: 10000
       callbacks:
         on_right: "exec cmd /c Taskmgr"
-  disk:
-    type: "yasb.disk.DiskWidget"
-    options:
-        label: "<span>\uf473</span> disks"
-        label_alt: "<span>\uf473</span>"
-        group_label:
-          volume_labels: ["C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-          show_label_name: false 
-          blur: true
-          round_corners: true
-          round_corners_type: "small"
-          border_color: '#7aa2f7'
-          alignment: 'center'
-          offset_top: 0
-        callbacks:
-          on_left: "toggle_group"
+
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
@@ -139,6 +114,7 @@ widgets:
       max_length: 45
       max_length_ellipsis: "..."
       monitor_exclusive: true
+
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -152,6 +128,7 @@ widgets:
         border_color: "#7aa2f7"
         alignment: "center"
         offset_top: 0
+
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
@@ -184,6 +161,7 @@ widgets:
         direction: "down"
         offset_top: 0
         icon_size: 48
+
   wifi:
     type: "yasb.wifi.WifiWidget"
     options:
@@ -204,6 +182,7 @@ widgets:
         "\udb82\udd25",  # Icon for 41-80% strength
         "\udb82\udd28"   # Icon for 81-100% strength
       ]
+
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
@@ -217,6 +196,7 @@ widgets:
         - "\uf027"  # Icon for 31-60% volume
         - "\uf028"  # Icon for 61-100% volume
       audio_menu:
+        show_apps: true
         blur: true
         round_corners: true
         round_corners_type: "small"
@@ -226,6 +206,8 @@ widgets:
         offset_top: 0
       callbacks:
         on_right: "toggle_mute"
+        on_middle: "exec quick_settings"
+
   battery:
     type: "yasb.battery.BatteryWidget"
     options:
@@ -234,6 +216,7 @@ widgets:
       #hide_unsupported: true
       charging_options:
         icon_format: "{charging_icon}" 
+
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
@@ -250,6 +233,7 @@ widgets:
         hibernate: ["\uf28e", "Hibernate"]
         sleep: ["\u23fe", "Sleep"]
         cancel: ["", "Cancel"]
+
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -309,6 +293,7 @@ widgets:
         color: "black"
         radius: 3
         offset: [ 1, 1 ]
+
   taskbar:
     type: "yasb.taskbar.TaskbarWidget"
     options:
@@ -328,13 +313,14 @@ widgets:
         margin: 8
       title_label:
         enabled: false
-        show: "always"
+        show: "focused"
         min_length: 10
         max_length: 30
       ignore_apps:
         processes: []
         titles: []
         classes: []
+
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
