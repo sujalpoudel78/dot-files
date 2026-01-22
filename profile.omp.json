@@ -64,7 +64,7 @@
             "style": "round",
             "threshold": 500
           },
-          "template": "\uf252 {{ .FormattedMs }}"
+          "template": "\uf252 {{ .FormattedMs }} "
         },
 
         {
