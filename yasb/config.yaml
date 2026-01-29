@@ -237,7 +237,7 @@ widgets:
         on_middle: "do_nothing"
         on_right: "toggle_label"
       max_field_size:
-        label: 25
+        label: 30
         label_alt: 45
       show_thumbnail: false
       controls_only: false
