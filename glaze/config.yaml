@@ -261,7 +261,7 @@ keybindings:
 
   # Kill GlazeWM process safely.
   - commands: ['wm-exit']
-    bindings: ['alt+shift+e']
+    bindings: ['alt+shift+ctrl+e']
 
   # Re-evaluate configuration file.
   - commands: ['wm-reload-config']
@@ -282,6 +282,11 @@ keybindings:
     bindings: ['alt+s']
   - commands: ['focus --prev-active-workspace']
     bindings: ['alt+a']
+    
+  - commands: ['move --next-workspace','focus --next-workspace',]
+    bindings: ['alt+shift+s']
+  - commands: ['move --prev-workspace','focus --prev-workspace']
+    bindings: ['alt+shift+a']
 
   # Focus the workspace that last had focus.
   - commands: ['focus --recent-workspace']
