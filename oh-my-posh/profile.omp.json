@@ -18,44 +18,44 @@
           "template": "\n"
         },
 
-        {
-          "type": "text",
-          "style": "plain",
-          "foreground": "p:lavender",
-          "template": "❯ "
-        },
-        {
-          "foreground": "p:os",
-          "style": "plain",
-          "template": "{{.Icon}} ",
-          "type": "os"
-        },
-        {
-          "foreground": "p:blue",
-          "style": "plain",
-          "template": "{{ .UserName }}@{{ .HostName }} ",
-          "type": "session"
-        },
+        // {
+        //   "type": "text",
+        //   "style": "plain",
+        //   "foreground": "p:lavender",
+        //   "template": "❯ "
+        // },
+        // {
+        //   "foreground": "p:os",
+        //   "style": "plain",
+        //   "template": "{{.Icon}} ",
+        //   "type": "os"
+        // },
+        // {
+        //   "foreground": "p:blue",
+        //   "style": "plain",
+        //   "template": "{{ .UserName }}@{{ .HostName }} ",
+        //   "type": "session"
+        // },
         {
           "foreground": "p:pink",
           "properties": {
             "folder_icon": "\ue5fe",
-            "home_icon": "~",
+            "home_icon": "~ ",
             "style": "agnoster_short"
           },
           "style": "plain",
           "template": "{{ .Path }} ",
           "type": "path"
         },
-        {
-          "type": "time",
-          "style": "plain",
-          "foreground": "p:lavender",
-          "properties": {
-            "time_format": "15:04"
-          },
-          "template": "\uf017 {{ .CurrentDate | date .Format }} "
-        },
+        // {
+        //   "type": "time",
+        //   "style": "plain",
+        //   "foreground": "p:lavender",
+        //   "properties": {
+        //     "time_format": "15:04"
+        //   },
+        //   "template": "\uf017 {{ .CurrentDate | date .Format }} "
+        // },
         {
           "type": "executiontime",
           "style": "plain",
@@ -91,18 +91,19 @@
           "type": "python",
           "style": "powerline",
           "foreground": "p:lavender",
-          "template": " {{ .Full}} {{ .Venv}}"
+          "template": " {{ .Full}} {{ .Venv}} "
         },
         {
           "type": "status",
           "style": "plain",
           "foreground": "p:error",
-          "template": "{{ if gt .Code 0 }} \uf12a {{ reason .Code }} {{ end }}"
-        },
+          "template": "{{ if gt .Code 0 }} \uf12a {{ reason .Code }} {{ end }} "
+        }
+        ,
         {
           "style": "plain",
-          "foreground": "p:closer",
-          "template": "\uf105",
+          "foreground": "p:closer", 
+          "template": "❯", //\uf105
           "type": "text"
         }
       ],
