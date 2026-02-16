@@ -92,7 +92,7 @@ window_effects:
       enabled: true
       style: 'rounded'
     transparency:
-      enabled: true
+      enabled: false
       opacity: '95%'
 
 window_behavior:
@@ -167,6 +167,9 @@ window_rules:
       - window_process: { equals: 'PhoneExperienceHost' }
       - window_process: { equals: 'IDMan' }
       - window_process: { equals: 'WinRAR' }
+      - window_process: { equals: 'OneDrive' }
+      - window_process: { equals: 'kdeconnect-handler' }
+      - window_process: { equals: 'nvcplui' }
       # - window_process: { equals: 'vlc' }
       # - window_process: { equals: 'Spotify' }
 

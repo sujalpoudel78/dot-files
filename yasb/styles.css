@@ -458,7 +458,7 @@
 }
 
 .taskbar-preview {
-  border: 1px solid var(--surface2);
+  border: 1px solid var(--surface1);
   background-color: var(--base);
   border-radius: 12px;
 }
