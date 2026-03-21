@@ -309,8 +309,8 @@
   cursor: pointer;
 }
 
-.glazewm-workspaces .ws-btn.active_populated,
-.glazewm-workspaces .ws-btn.active_empty {
+.glazewm-workspaces .ws-btn.focused_populated,
+.glazewm-workspaces .ws-btn.focused_empty {
   color: var(--red);
   font-weight: 900;
 }
@@ -472,3 +472,74 @@
   filter: none !important;
   backdrop-filter: none !important;
 } */
+
+.notes-menu {
+  min-width: 300px;
+  max-width: 300px;
+  background-color: var(--base);
+}
+
+.notes-widget .label,
+.notes-widget .icon {
+  color: var(--teal);
+}
+
+.notes-menu .note-item {
+  background-color: var(--base);
+  border-top: 1px solid var(--overlay0);
+}
+
+.notes-menu .title {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.notes-menu .note-item .title {
+  font-size: 13px;
+  font-family: "Segoe UI";
+}
+.notes-menu .note-item .date {
+  font-size: 12px;
+  font-family: "Segoe UI";
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.notes-menu .empty-list {
+  font-family: "Segoe UI";
+  background-color: var(--base);
+  font-size: 24px;
+  font-weight: 600;
+  padding: 10px 0 20px 0;
+}
+.notes-menu .add-button,
+.notes-menu .cancel-button {
+  padding: 6px;
+  background-color: var(--surface1);
+  font-family: "Segoe UI";
+}
+.notes-menu .cancel-button {
+  background-color: var(--surface0);
+  color: var(--red);
+}
+
+.notes-menu .note-input {
+  background-color: rgba(17, 17, 27, 0.2);
+  border: 1px solid var(--teal);
+  font-family: "Segoe UI";
+  font-size: 14px;
+  max-height: 30px;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.notes-menu .delete-button,
+.notes-menu .copy-button {
+  /* color: var(--surface0); */
+  background-color: transparent;
+  border: none;
+  font-size: 13px;
+  padding-right: 10px;
+}
+.notes-menu .delete-button {
+  color: var(--red);
+}

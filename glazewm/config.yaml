@@ -48,10 +48,10 @@ gaps:
 
   # Gap between windows and the screen edge.
   outer_gap:
-    top: '0px'
-    right: '4px'
-    left: '4px'
-    bottom: '4px'
+    top: '1px'
+    right: '3px'
+    left: '3px'
+    bottom: '3px'
 
 window_effects:
   # Visual effects to apply to the focused window.
@@ -93,7 +93,7 @@ window_effects:
       style: 'rounded'
     transparency:
       enabled: true
-      opacity: '99%'
+      opacity: '97%'
 
 window_behavior:
   # New windows are created in this state whenever possible.
@@ -123,19 +123,12 @@ workspaces:
   - name: '1'
     bind_to_monitor: 1
   - name: '2'
-    bind_to_monitor: 1
   - name: '3'
-    bind_to_monitor: 1
   - name: '4'
-    bind_to_monitor: 1
   - name: '5'
-    bind_to_monitor: 1
   - name: '6'
-    bind_to_monitor: 0
   - name: '7'
-    bind_to_monitor: 0
   - name: '8'
-    bind_to_monitor: 0
   - name: '9'
     bind_to_monitor: 0
 
@@ -149,6 +142,7 @@ window_rules:
       - window_process: { equals: 'explorer' }
         window_class: { regex: '#32770' } # run dialog
       - window_process: { equals: 'msiexec' }
+      - window_title: { regex: '(?i)setup' }
 
       # Ignores picture-in-picture windows for browsers.
       - window_title: { regex: '[Pp]icture.in.[Pp]icture' }
@@ -180,6 +174,10 @@ window_rules:
       - window_process: { equals: 'kdeconnect-handler' }
       - window_process: { equals: 'nvcplui' }
       - window_process: { equals: 'Minecraft.Windows' }
+      - window_process: { equals: 'Taskmgr' }
+      - window_process: { equals: 'SnippingTool' }
+      - window_process: { equals: 'firefox' }
+        window_title: { regex: 'Library' }
       # - window_process: { equals: 'vlc' }
       # - window_process: { equals: 'Spotify' }
 
@@ -206,9 +204,9 @@ keybindings:
   - commands: ['focus --direction right']
     bindings: ['alt+e',]
   - commands: ['focus --direction up']
-    bindings: ['alt+x',]
+    bindings: ['alt+;',]
   - commands: ['focus --direction down']
-    bindings: ['alt+c',]
+    bindings: ['alt+l',]
 
   # Move focused window in a given direction.
   - commands: ['move --direction left']
@@ -282,7 +280,7 @@ keybindings:
 
   # Redraw all windows.
   # - commands: ['wm-redraw']
-  #   bindings: ['alt+shift+w']
+  #   bindings: ['alt+shift+r']
 
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows

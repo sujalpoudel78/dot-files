@@ -100,11 +100,13 @@ bars:
       left: [
           "clock",
           "glazewm_workspaces",  
+          "notes",
       ]
       center: [
           # "active_window",
         ]
       right: [
+          # "systray",
           "cpu",
           "memory",
           "gpu",
@@ -416,4 +418,35 @@ widgets:
   #       on_left: "toggle_card"
   #       on_middle: "do_nothing"
   #       on_right: "toggle_label"
+
+  notes:
+    type: "yasb.notes.NotesWidget"
+    options:
+      label: "<span>\udb82\udd0c</span>{count}"
+      label_alt: "{count} notes"
+      # data_path: "~/Documents/my-notes.json"  # Optional: custom JSON file path
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        # border_color: ""
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        max_title_size: 150
+        show_date_time: true
+      icons:
+        note: "\udb82\udd0c"
+        delete: "\ueab8"
+        copy: "\uebcc"
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
   
