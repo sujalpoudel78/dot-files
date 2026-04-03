@@ -92,7 +92,7 @@ window_effects:
       enabled: true
       style: 'rounded'
     transparency:
-      enabled: true
+      enabled: false
       opacity: '97%'
 
 window_behavior:
@@ -178,6 +178,9 @@ window_rules:
       - window_process: { equals: 'SnippingTool' }
       - window_process: { equals: 'firefox' }
         window_title: { regex: 'Library' }
+      - window_title: { regex: 'Minecraft' }
+        window_class: { regex: 'Bedrock' }
+        
       # - window_process: { equals: 'vlc' }
       # - window_process: { equals: 'Spotify' }
 
@@ -255,8 +258,8 @@ keybindings:
     bindings: ['alt+v']
 
   # Change the focused window to be tiling.
-  # - commands: ['toggle-tiling']
-  #   bindings: ['alt+t']
+  - commands: ['toggle-tiling']
+    bindings: ['alt+t']
 
   # Change the focused window to be fullscreen.
   - commands: ['toggle-fullscreen']
@@ -279,8 +282,8 @@ keybindings:
     bindings: ['alt+shift+ctrl+r']
 
   # Redraw all windows.
-  # - commands: ['wm-redraw']
-  #   bindings: ['alt+shift+r']
+  - commands: ['shell-exec pwsh -Command glazewm command wm-exit; glazewm']
+    bindings: ['ctrl+alt+shift+/']
 
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
