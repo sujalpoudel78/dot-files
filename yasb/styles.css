@@ -350,7 +350,6 @@
 .wifi-widget .label {
   color: var(--yellow);
 }
-
 /* ===================== */
 /* === BATTERY WIDGET === */
 /* ===================== */
@@ -544,3 +543,5 @@
 .notes-menu .delete-button {
   color: var(--red);
 }
+
+
