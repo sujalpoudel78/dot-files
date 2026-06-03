@@ -177,8 +177,8 @@ window_rules:
       - window_process: { equals: 'Minecraft.Windows' }
       - window_process: { equals: 'Taskmgr' }
       - window_process: { equals: 'SnippingTool' }
-      - window_process: { equals: 'firefox' }
-        window_title: { regex: 'Library' }
+      # - window_process: { equals: 'firefox' }
+      #   window_title: { regex: 'Library' }
       - window_title: { regex: 'Minecraft' }
         window_class: { regex: 'Bedrock' }
       - window_process: { equals: 'xampp-control' }

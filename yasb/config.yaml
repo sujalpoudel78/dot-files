@@ -39,7 +39,6 @@ bars:
         stretch: true
     widgets:
       left: [
-          # "home", 
           "clock",
           "glazewm_workspaces",  
           "taskbar",
@@ -49,10 +48,6 @@ bars:
           "active_window",
         ]
       right: [
-          # "systray",
-          # "cpu",
-          # "memory",
-          # "gpu",
           "wifi",
           "volume",
           "battery",
