@@ -100,7 +100,7 @@ bars:
           # "active_window",
         ]
       right: [
-          "systray",
+          # "systray",
           "notes",
           "glazewm_workspaces",  
           "clock1",

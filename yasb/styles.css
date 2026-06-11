@@ -398,6 +398,9 @@
 /* ==================== */
 /* === GPU WIDGET === */
 /* ==================== */
+.gpu-widget{
+  border-radius: 15px !important;
+}
 .gpu-widget .icon,
 .gpu-widget .label {
   color: var(--green);
