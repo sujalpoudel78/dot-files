@@ -52,7 +52,7 @@ bars:
           "volume",
           "battery",
           "notifications",
-          # "power_menu",
+          "power_menu",
       ]
 
   secondary-bar:
