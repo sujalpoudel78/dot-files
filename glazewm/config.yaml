@@ -144,7 +144,7 @@ window_rules:
       - window_process: { equals: 'msiexec' }
       - window_process: { equals: 'winver' }
       - window_process: { equals: 'mmc' }
-      - window_title: { regex: '(?i)setup' }
+      - window_title: { regex: '(?i)^.*(installer|uninstaller|setup wizard).*$' }
 
       # Ignores picture-in-picture windows for browsers.
       - window_title: { regex: '[Pp]icture.in.[Pp]icture' }

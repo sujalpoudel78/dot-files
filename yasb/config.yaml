@@ -52,7 +52,6 @@ bars:
           "volume",
           "battery",
           "notifications",
-          "power_menu",
       ]
 
   secondary-bar:
@@ -77,9 +76,9 @@ bars:
       height: 33
     padding:
       top: 0
-      left: 3
+      left: 0
       bottom: 0
-      right: 3
+      right: 0
     layouts:
       left:
         alignment: "left"
@@ -106,26 +105,7 @@ bars:
           "clock1",
       ]
 widgets:
-  home:
-    type: "yasb.home.HomeWidget"
-    options:
-      label: "<span>\udb80\udf5c</span>"
-      # menu_list:
-        # - { title: "Home", path: "~" }
-        # - { title: "Downloads", path: "~\\Downloads"}
-        # - { title: "Documents", path: "~\\Documents"}
-        # - { title: "Pictures", path: "~\\Pictures"}
-        # - { title: "Videos", path: "~\\Videos"}
-      system_menu: true
-      power_menu: true
-      blur: true
-      round_corners: true
-      round_corners_type: "small"
-      border_color: "#7aa2f7"
-      alignment: "left"
-      offset_left: 4
-      offset_top: 0
-      
+  
   glazewm_workspaces:
     type: "glazewm.workspaces.GlazewmWorkspacesWidget"
     options:
@@ -147,7 +127,7 @@ widgets:
   gpu:
     type: "yasb.gpu.GpuWidget"
     options:
-      gpu_index: 1
+      # gpu_index: 1
       label: " {info[temp]}°C"
       label_alt: "<span>\uf4bc</span> {info[temp]}°C | {info[mem_used]} / {info[mem_total]}"
       update_interval: 2000
@@ -240,9 +220,9 @@ widgets:
       ethernet_icon: "\uf108"
       update_interval: 5000
       callbacks:
-        on_left: "exec quick_settings"
-        on_middle: "do_nothing"
-        on_right: "toggle_label"
+        on_left: "toggle_menu"
+        on_middle: "exec cmd.exe /c start ms-settings:network"
+        on_right: "exec quick_settings"
       wifi_icons: [
         "\udb82\udd2e",  # Icon for 0% strength
         "\udb82\udd1f",  # Icon for 1-20% strength

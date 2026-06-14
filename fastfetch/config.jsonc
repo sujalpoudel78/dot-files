@@ -14,7 +14,7 @@
         "host": "#89DCEB"
       }
     },
-      "break",
+    "break",
     {
       "type": "os",
       "key": "",
@@ -25,17 +25,21 @@
       "key": "󰅐",
       "keyColor": "#B4BEFE"
     },
-
     {
       "type": "cpu",
       "key": "",
-      "keyColor": "#CBA6F7"
+      "keyColor": "#89b4fa"
     },
     {
       "type": "memory",
       "key": "",
-      "keyColor": "#A6E3A1",
+      "keyColor": "#CBA6F7",
       "format": "{used} / {total} ({percentage})"
+    },
+    {
+      "type": "gpu",
+      "key": "",
+      "keyColor": "#A6E3A1"
     },
     {
       "type": "display",
@@ -49,7 +53,6 @@
       "key": "",
       "keyColor": "#94E2D5"
     },
-
     {
       "type": "battery",
       "key": "󰁹",
@@ -65,7 +68,6 @@
       "defaultRouteOnly": true
     },
     "break",
-
     {
       "type": "shell",
       "key": "",
@@ -76,7 +78,6 @@
       "key": "",
       "keyColor": "#CDD6F4"
     },
-
     "break",
     {
       "type": "colors",
