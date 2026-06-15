@@ -219,7 +219,6 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-
 /* ================= */
 /* === CLOCK WIDGET === */
 /* ================= */
@@ -234,8 +233,6 @@
   font-weight: 700;
   color: var(--sapphire);
 }
-
-
 
 /* Calendar dropdown */
 .calendar {
@@ -304,11 +301,6 @@
   /* margin: 4px 0; */
   border-radius: 12px;
   /* border: 0; */
-
-
-
-
-
 }
 
 .glazewm-workspaces .ws-btn {
@@ -363,66 +355,66 @@
 }
 .wifi-menu {
   font-family: "JetBrainsMono NFP";
-    background-color: var(--base);
-    max-height: 350px;
-    min-height: 375px;
-    min-width: 375px;
+  background-color: var(--base);
+  max-height: 350px;
+  min-height: 375px;
+  min-width: 375px;
 }
 
 .wifi-menu .progress-bar {
-    max-height: 2px;
-    color: var(--flamingo);
+  max-height: 2px;
+  color: var(--flamingo);
 }
 
 .wifi-menu .header {
-    font-family: "JetBrainsMono NFP";
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 2px;
-    padding: 12px;
-    background-color: var(--base);
-    color: white;
-    border-bottom: 1px solid var(--surface0);
+  font-family: "JetBrainsMono NFP";
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  padding: 12px;
+  background-color: var(--base);
+  color: white;
+  border-bottom: 1px solid var(--surface0);
 }
 
 .wifi-menu .error-message {
-    font-family: "JetBrainsMono NFP";
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 2px;
-    padding: 12px;
-    background-color: var(--red);
-    color: white;
-    border-bottom: 1px solid var(--surface0);
+  font-family: "JetBrainsMono NFP";
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  padding: 12px;
+  background-color: var(--red);
+  color: white;
+  border-bottom: 1px solid var(--surface0);
 }
 
 .wifi-menu .wifi-list {
-    background-color: var(--crust);
-    margin-right: 3px;
+  background-color: var(--crust);
+  margin-right: 3px;
 }
 
 .wifi-menu .wifi-item {
-    min-height: 35px;
-    padding: 2px 12px;
-    margin: 2px 4px;
+  min-height: 35px;
+  padding: 2px 12px;
+  margin: 2px 4px;
 }
 
 .wifi-menu .wifi-item:hover {
-    background-color: var(--surface0);
-    border-radius: 6px;
+  background-color: var(--surface0);
+  border-radius: 6px;
 }
 
-.wifi-menu .wifi-item[active=true] {
-    background-color: var(--base);
-    font-size: 14px;
-    border-radius: 6px;
-    min-height: 80px;
+.wifi-menu .wifi-item[active="true"] {
+  background-color: var(--base);
+  font-size: 14px;
+  border-radius: 6px;
+  min-height: 80px;
 }
 
 .wifi-menu .wifi-item .icon {
-    font-family: 'Segoe Fluent Icons';
-    font-size: 26px;
-    margin-right: 10px;
+  font-family: "Segoe Fluent Icons";
+  font-size: 26px;
+  margin-right: 10px;
 }
 
 .wifi-menu .wifi-item .name {
@@ -435,50 +427,49 @@
   width: 200%;
 }
 
-
 .wifi-menu .wifi-item .connect {
-    background-color: var(--yellow);
-    color: var(--base);
-    padding: 4px 30px;
-    border-radius: 4px;
-    border: none;
-    font-size: 14px;
+  background-color: var(--yellow);
+  color: var(--base);
+  padding: 4px 30px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
 }
 
 .wifi-menu .wifi-item .connect:hover {
-    background-color: var(--surface1);
-    color: var(--subtext1);
+  background-color: var(--surface1);
+  color: var(--subtext1);
 }
 
 .wifi-menu .wifi-item .connect:pressed {
-    background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .wifi-menu .footer {
-    font-size: 12px;
-    font-weight: 600;
-    padding: 12px;
-    margin-top: 2px;
-    background-color: var(--base);
-    border-top: 1px solid var(--surface0);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 12px;
+  margin-top: 2px;
+  background-color: var(--base);
+  border-top: 1px solid var(--surface0);
 }
 
 .wifi-menu .footer .settings-button {
-    background-color: transparent;
-    border: none;
+  background-color: transparent;
+  border: none;
 }
 
 .wifi-menu .footer .refresh-icon {
-    font-family: 'Segoe Fluent Icons';
-    background-color: transparent;
-    border: none;
-    min-width: 26px;
-    min-height: 26px;
+  font-family: "Segoe Fluent Icons";
+  background-color: transparent;
+  border: none;
+  min-width: 26px;
+  min-height: 26px;
 }
 
 .wifi-menu .footer .refresh-icon:hover {
-    background-color: var(--surface0);
-    border-radius: 4px;
+  background-color: var(--surface0);
+  border-radius: 4px;
 }
 /* ===================== */
 /* === BATTERY WIDGET === */
@@ -500,6 +491,7 @@
   color: var(--mauve);
 }
 
+
 /* ==================== */
 /* === CPU WIDGET === */
 /* ==================== */
@@ -509,15 +501,149 @@
   color: var(--blue);
 }
 
+.cpu-popup {
+  background-color: var(--crust);
+  min-width: 400px;
+  font-family: "JetbrainsMono NFP";
+}
+
+.cpu-popup .header {
+  padding: 12px 16px;
+}
+
+.cpu-popup .header .text {
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+
+.cpu-popup .header .pin-btn {
+  font-size: 14px;
+  font-family: "Segoe Fluent Icons";
+  border: none;
+  padding: 6px;
+}
+
+.cpu-popup .header .pin-btn.pinned {
+  color: #ffffff;
+}
+
+/* Graph area */
+.cpu-popup .graph-container {
+  background: transparent;
+  min-height: 64px;
+}
+
+.cpu-popup .cpu-graph {
+  color: var(--blue);
+}
+.cpu-popup .cpu-graph-grid {
+  color: var(--surface0);
+}
+.cpu-popup .graph-title {
+  font-size: 12px;
+  padding: 0px 0px 4px 14px;
+}
+/* Stats grid */
+.cpu-popup .stats {
+  padding: 16px;
+}
+.cpu-popup .stats .stat-item {
+  background-color: var(--base);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 8px;
+}
+.cpu-popup .stats .stat-label {
+  font-size: 13px;
+  color: var(--subtext0);
+  font-weight: 400;
+  padding: 6px 4px 2px 4px;
+}
+.cpu-popup .stats .stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  padding: 0 4px 12px 4px;
+}
+
 /* ==================== */
 /* === GPU WIDGET === */
 /* ==================== */
-.gpu-widget{
+.gpu-widget {
   border-radius: 15px !important;
 }
 .gpu-widget .icon,
 .gpu-widget .label {
   color: var(--green);
+}
+.gpu-popup {
+  font-family: "JetbrainsMono NFP";
+  background-color: var(--crust);
+  min-width: 400px;
+}
+
+.gpu-popup .header {
+  background: transparent;
+  padding: 12px 16px;
+}
+.gpu-popup .header .text {
+  font-size: 16px;
+  color: var(--text);
+}
+.gpu-popup .header .pin-btn {
+  font-size: 14px;
+  font-family: "Segoe Fluent Icons";
+  border: none;
+  padding: 6px;
+  color: var(--text);
+}
+
+/* Graph area */
+.gpu-popup .graph-container {
+  min-height: 64px;
+}
+.gpu-popup .gpu-graph {
+  color: var(--green);
+}
+.gpu-popup .gpu-graph-grid,
+.gpu-popup .gpu-temp-graph-grid {
+  color: var(--surface0);
+}
+.gpu-popup .gpu-temp-graph {
+  color: var(--peach);
+}
+
+.gpu-popup .graph-title {
+  font-size: 12px;
+  color: var(--subtext0);
+  padding: 0px 0px 4px 14px;
+  margin-top: 12px; /* Add top margin to separate from 2nd graph */
+}
+.gpu-popup .graph-title.first {
+  margin-top: 0px; /* Remove top margin for the first graph title */
+}
+/* Stats grid */
+.gpu-popup .stats {
+  padding: 16px;
+}
+.gpu-popup .stats .stat-item {
+  background-color: var(--base);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 8px;
+}
+
+.gpu-popup .stats .stat-label {
+  font-size: 13px;
+  color: var(--subtext0);
+  font-weight: 400;
+  padding: 6px 4px 2px 4px;
+}
+.gpu-popup .stats .stat-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  padding: 0 4px 12px 4px;
 }
 
 /* ================= */
@@ -595,9 +721,8 @@
   color: var(--mauve);
 }
 
-.taskbar-widget{
+.taskbar-widget {
   border-radius: 12px;
-  
 }
 
 .taskbar-preview {
@@ -606,13 +731,12 @@
   border-radius: 12px;
 }
 
-
 /* ================= */
 /* === MEDIA WIDGET === */
 /* ================= */
 
 .notification-widget {
-    border-radius: 12px;
+  border-radius: 12px;
 }
 
 /* === REMOVE BAR SHADOW === */
@@ -699,9 +823,3 @@
 .notes-menu .delete-button {
   color: var(--red);
 }
-
-
-
-
-
-
