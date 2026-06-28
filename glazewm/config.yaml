@@ -184,8 +184,10 @@ window_rules:
         window_class: { regex: 'Bedrock' }
       - window_process: { equals: 'xampp-control' }
       - window_process: { equals: 'UnivsersalUninstaller' }
+      - window_process: { equals: 'BCUninstaller' }
       - window_process: { equals: 'VirtualBox' }
         window_title: { regex: 'Settings' }
+      - window_process: { equals: 'nearby_share' }
         
       # - window_process: { equals: 'vlc' }
       # - window_process: { equals: 'Spotify' }

@@ -100,6 +100,7 @@ bars:
         ]
       right: [
           # "systray",
+          "weather",
           "notes",
           "glazewm_workspaces",  
           "clock1",
@@ -174,7 +175,8 @@ widgets:
       update_interval: 10000
       callbacks:
         on_left: "toogle_menu"
-        on_right: "exec cmd /c Taskmgr"
+        on_middle: "exec cmd /c Taskmgr"
+        on_right: "toogle_label"
 
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
@@ -360,7 +362,7 @@ widgets:
       icon_size: 16
       tooltip: true
       show_only_visible: false
-      strict_filtering: true
+      strict_filtering: false
       monitor_exclusive: false
       hide_empty: true
       animation:
@@ -448,3 +450,20 @@ widgets:
         color: "black"
         radius: 3
         offset: [ 1, 1 ]
+
+  weather:
+    type: "yasb.weather.WeatherWidget"
+    options:
+      label: "<span>{icon}</span> {temp}"
+      label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
+      api_key: "$env:YASB_WEATHER_API_KEY" # Get your free API key from https://www.weatherapi.com/
+      show_alerts: true
+      tooltip: true
+      update_interval: 600 # Update interval in seconds, Min 600 seconds
+      hide_decimal: true
+      units: "metric" # Can be 'metric' or 'imperial'
+      location: "$env:YASB_WEATHER_LOCATION" # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
+      callbacks:
+        on_left: "toggle_card"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
