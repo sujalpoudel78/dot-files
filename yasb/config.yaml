@@ -48,6 +48,7 @@ bars:
           "active_window",
         ]
       right: [
+          "systray",
           "wifi",
           "volume",
           "battery",
@@ -99,7 +100,6 @@ bars:
           # "active_window",
         ]
       right: [
-          # "systray",
           "weather",
           "notes",
           "glazewm_workspaces",  
@@ -419,6 +419,17 @@ widgets:
         color: "black"
         radius: 3
         offset: [ 1, 1 ]
+      show_in_popup: true
+      icons_per_row: 5
+      popup:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: None
+        alignment: "center"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
         
   notes:
     type: "yasb.notes.NotesWidget"
@@ -455,15 +466,12 @@ widgets:
     type: "yasb.weather.WeatherWidget"
     options:
       label: "<span>{icon}</span> {temp}"
-      label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
-      api_key: "$env:YASB_WEATHER_API_KEY" # Get your free API key from https://www.weatherapi.com/
+      api_key: "$env:YASB_WEATHER_API_KEY"
       show_alerts: true
       tooltip: true
-      update_interval: 600 # Update interval in seconds, Min 600 seconds
+      update_interval: 1800
       hide_decimal: true
-      units: "metric" # Can be 'metric' or 'imperial'
-      location: "$env:YASB_WEATHER_LOCATION" # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
+      units: "metric" 
+      location: "$env:YASB_WEATHER_LOCATION" 
       callbacks:
         on_left: "toggle_card"
-        on_middle: "do_nothing"
-        on_right: "toggle_label"

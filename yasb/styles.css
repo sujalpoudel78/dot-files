@@ -705,9 +705,22 @@
   font-size: 24px;
 }
 
-.systray .unpinned-visibility-btn:hover {
-  border-radius: 4px;
-  border-color: #aaaaaa;
+.systray-popup .button.drag-over {
+    background-color: var(--surface1);
+}
+
+.systray-popup {
+    background-color: var(--crust);
+    padding: 3px;
+}
+.systray-popup .button {
+    padding: 10px;
+    margin: 0;
+    border: 0;
+    border-radius: 6px;
+}
+.systray-popup .button:hover {
+    background-color:var(--surface0)
 }
 
 /* ================= */
