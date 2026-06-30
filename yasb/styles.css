@@ -280,19 +280,6 @@
   margin-top: -20px;
 }
 
-/* ==================== */
-/* === WEATHER WIDGET === */
-/* ==================== */
-.weather-widget .icon {
-  font-size: 20px;
-  margin: 0 2px 1px 0;
-  color: var(--maroon);
-}
-
-.weather-card {
-  background-color: var(--mantle);
-}
-
 /* ====================== */
 /* === WORKSPACE WIDGET === */
 /* ====================== */
@@ -490,7 +477,6 @@
 .memory-widget .label {
   color: var(--mauve);
 }
-
 
 /* ==================== */
 /* === CPU WIDGET === */
@@ -706,34 +692,26 @@
 }
 
 .systray-popup .button.drag-over {
-    background-color: var(--surface1);
+  background-color: var(--surface1);
 }
 
 .systray-popup {
-    background-color: var(--crust);
-    padding: 3px;
+  background-color: var(--crust);
+  padding: 3px;
 }
 .systray-popup .button {
-    padding: 10px;
-    margin: 0;
-    border: 0;
-    border-radius: 6px;
+  padding: 10px;
+  margin: 0;
+  border: 0;
+  border-radius: 6px;
 }
 .systray-popup .button:hover {
-    background-color:var(--surface0)
+  background-color: var(--surface0);
 }
 
 /* ================= */
-/* === MEDIA WIDGET === */
+/* === TASKBAR WIDGET === */
 /* ================= */
-.media-widget {
-  border-radius: 12px;
-}
-
-.media-widget .label {
-  color: var(--mauve);
-}
-
 .taskbar-widget {
   border-radius: 12px;
 }
@@ -745,7 +723,7 @@
 }
 
 /* ================= */
-/* === MEDIA WIDGET === */
+/* === NOTIFICATION WIDGET === */
 /* ================= */
 
 .notification-widget {
@@ -835,4 +813,262 @@
 
 .notes-menu .delete-button {
   color: var(--red);
+}
+
+/* ==================== */
+/* === WEATHER WIDGET === */
+/* ==================== */
+.weather-widget .icon,
+.weather-widget .label {
+  margin: 0 2px 1px 0;
+  color: var(--text);
+}
+
+/* Individual weather icons */
+.weather-widget .icon.sunnyDay {
+  color: var(--yellow);
+}
+.weather-widget .icon.clearNight {
+  color: var(--blue);
+}
+.weather-widget .icon.cloudyDay {
+  color: var(--overlay2);
+}
+.weather-widget .icon.cloudyNight {
+  color: var(--overlay2);
+}
+.weather-widget .icon.rainyDay {
+  color: var(--blue);
+}
+.weather-widget .icon.rainyNight {
+  color: var(--blue);
+}
+.weather-widget .icon.snowyDay {
+  color: var(--subtext1);
+}
+.weather-widget .icon.snowyNight,
+.weather-widget .icon.blizzardDay,
+.weather-widget .icon.blizzardNight,
+.weather-widget .icon.foggyDay,
+.weather-widget .icon.foggyNight,
+.weather-widget .icon.thunderstormDay,
+.weather-widget .icon.thunderstormNight,
+.weather-widget .icon.default {
+  color: var(--text);
+}
+
+/* Weather card style */
+.weather-card {
+  background-color: var(--mantle);
+}
+.weather-card-today {
+  /* border: 1px solid #282936; */
+  border-radius: 8px;
+  background-color: var(--mantle);
+}
+.weather-card-today .label {
+  font-size: 12px;
+}
+.weather-card-today .label.location {
+  font-size: 24px;
+  font-weight: 700;
+}
+.weather-card-today .label.alert {
+  font-size: 12px;
+  font-weight: 700;
+  background-color: rgba(247, 199, 42, 0.05);
+  border: 1px solid rgba(247, 209, 42, 0.1);
+  color: rgba(196, 181, 162, 0.85);
+  border-radius: 6px;
+  padding: 5px 0;
+}
+.weather-card-day {
+  border: 1px solid var(--surface0);
+  border-radius: 8px;
+}
+
+.weather-card-day.active {
+  background-color: var(--surface0);
+  /* border: 1px solid rgba(50, 50, 75, 1); */
+}
+
+.weather-card-day:hover {
+  background-color: var(--surface0);
+}
+
+.weather-card-day .label {
+  font-size: 12px;
+}
+
+.weather-card .hourly-container {
+  min-height: 150px;
+}
+
+.weather-card .hourly-data {
+  font-weight: bold;
+}
+
+.weather-card .hourly-data.temperature {
+  background-color: var(--yellow); /* Temperature curve & line color */
+}
+
+.weather-card .hourly-data.rain {
+  background-color: var(--blue); /* Rain curve & line color */
+}
+
+.weather-card .hourly-data.snow {
+  background-color: #a0c4ff; /* Snow curve & line color */
+}
+
+/* Hourly forecast toggle buttons */
+.weather-card .hourly-data-buttons {
+  margin: 0px;
+}
+.weather-card .hourly-data-button {
+  border-radius: 4px;
+  min-height: 24px;
+  min-width: 24px;
+  max-width: 24px;
+  max-height: 24px;
+  font-size: 14px;
+  color: var(--text);
+  border: 1px solid transparent;
+}
+.weather-card .hourly-data-button.active {
+  color: #fff;
+  background-color: var(--surface0);
+}
+
+/* ==================== */
+/* === MEDIA WIDGET === */
+/* ==================== */
+
+.media-widget {
+  border-radius: 12px;
+}
+
+.media-widget .label {
+  color: var(--mauve);
+}
+
+.media-menu {
+  min-width: 400px;
+  max-width: 400px;
+  background-color: var(--crust);
+  border: 1px solid var(--surface1);
+  border-radius: 12px;
+}
+.media-menu .title,
+.media-menu .artist,
+.media-menu .source {
+  font-size: 14px;
+  font-weight: 600;
+  /* margin-left: -10px; */
+  font-family: "Segoe UI";
+  margin-left: 10px;
+}
+.media-menu .title {
+  margin-left: 10px;
+}
+.media-menu .artist {
+  font-size: 13px;
+  color: var(--subtext0);
+  margin-top: 0px;
+  margin-left: 10px;
+}
+.media-menu .source {
+  font-size: 11px;
+  color: var(--text);
+  font-weight: 600;
+  font-family: "Segoe UI";
+  margin-top: 10px;
+}
+
+.media-menu .btn {
+  font-family: "Segoe Fluent Icons";
+  font-size: 14px;
+  font-weight: 400;
+  margin: 10px 2px 0px 2px;
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  border-radius: 20px;
+}
+.media-menu .btn.prev {
+  margin-left: 10px;
+}
+.media-menu .btn:hover {
+  color: white;
+  background-color: var(--surface0);
+}
+
+.media-menu .btn.disabled:hover,
+.media-menu .btn.disabled {
+  color: var(--surface1);
+  background-color: var(--crust);
+}
+
+.media-menu .playback-time {
+  font-size: 13px;
+  font-family: "Segoe UI";
+  margin-top: 20px;
+  min-width: 100px;
+}
+.media-menu .progress-slider {
+  height: 10px;
+  margin: 5px 4px;
+  border-radius: 3px;
+}
+.media-menu .progress-slider::groove {
+  background: transparent;
+  height: 2px;
+  border-radius: 3px;
+  background: var(--surface0);
+}
+.media-menu .progress-slider::groove:hover {
+  background: transparent;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--surface1);
+}
+.media-menu .progress-slider::sub-page {
+  background: var(--overlay1);
+  border-radius: 3px;
+  height: 4px;
+}
+
+.media-menu .app-volume-container {
+  background-color: var(--surface0);
+  padding: 8px 6px;
+  border-radius: 16px;
+  margin-left: 10px;
+}
+.media-menu .app-volume-container .volume-slider::groove {
+  background: var(--surface1);
+  width: 2px;
+  border-radius: 3px;
+}
+.media-menu .app-volume-container .volume-slider::add-page {
+  background: var(--overlay1);
+  border-radius: 3px;
+}
+.media-menu .app-volume-container .volume-slider::groove:hover {
+  background: var(--surface1);
+  width: 6px;
+  border-radius: 3px;
+}
+.media-menu .app-volume-container .volume-slider::sub-page {
+  background: var(--surface1);
+  border-radius: 3px;
+}
+.media-menu .app-volume-container .mute-button,
+.media-menu .app-volume-container .unmute-button {
+  font-size: 16px;
+  color: var(--overlay2);
+  font-family: "Segoe Fluent Icons";
+  margin-top: 4px;
+}
+.media-menu .app-volume-container .unmute-button {
+  color: var(--overlay0);
 }
