@@ -84,6 +84,15 @@
   margin: 0 4px 0 0;
 }
 
+
+
+.tooltip {
+    background-color: var(--base);
+    border-radius: 12px;
+    color: var(--text);
+    padding: 5px 10px;
+}
+
 /* ==================== */
 /* === POWER MENU === */
 /* ==================== */
@@ -410,7 +419,7 @@
   margin-right: 10px;
 }
 .wifi-menu .wifi-item .password {
-  color: red;
+  color: var(--text);
   width: 200%;
 }
 

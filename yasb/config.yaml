@@ -45,7 +45,7 @@ bars:
           "media",
       ]
       center: [
-          "active_window",
+          # "active_window",
         ]
       right: [
           "systray",
@@ -197,10 +197,9 @@ widgets:
   clock24: 
     type: "yasb.clock.ClockWidget"
     options:
-      label: "<span>\uf017</span>{%H:%M %d/%m/%y}" #%I:%M %p
+      label: "<span>\uf017</span>{%H:%M %d/%m/%Y}" #%I:%M %p
       label_alt: "<span>\uf017</span>{%A, %B %d. %Y %H:%M}"
       locale: "en_US"
-      timezones: []
       calendar:
         round_corners: true
         round_corners_type: "small"
