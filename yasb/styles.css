@@ -482,9 +482,78 @@
 /* ==================== */
 /* === MEMORY WIDGET === */
 /* ==================== */
+.memory-widget {
+  border-radius: 15px !important;
+}
 .memory-widget .icon,
 .memory-widget .label {
   color: var(--mauve);
+}
+.memory-popup {
+  font-family: "JetbrainsMono NFP";
+  background-color: var(--crust);
+  min-width: 400px;
+}
+
+.memory-popup .header {
+  background: transparent;
+  padding: 12px 16px;
+}
+.memory-popup .header .text {
+  font-size: 16px;
+  color: var(--text);
+}
+.memory-popup .header .pin-btn {
+  font-size: 14px;
+  font-family: "Segoe Fluent Icons";
+  border: none;
+  padding: 6px;
+  color: var(--text);
+}
+
+/* Graph area */
+.memory-popup .graph-container {
+  min-height: 64px;
+}
+.memory-popup .memory-graph {
+  color: var(--mauve);
+}
+.memory-popup .memory-graph-grid,
+.memory-popup .memory-temp-graph-grid {
+  color: var(--surface0);
+}
+
+.memory-popup .graph-title {
+  font-size: 12px;
+  color: var(--subtext0);
+  padding: 0px 0px 4px 14px;
+  margin-top: 12px; /* Add top margin to separate from 2nd graph */
+}
+.memory-popup .graph-title.first {
+  margin-top: 0px; /* Remove top margin for the first graph title */
+}
+/* Stats grid */
+.memory-popup .stats {
+  padding: 16px;
+}
+.memory-popup .stats .stat-item {
+  background-color: var(--base);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 8px;
+}
+
+.memory-popup .stats .stat-label {
+  font-size: 13px;
+  color: var(--subtext0);
+  font-weight: 400;
+  padding: 6px 4px 2px 4px;
+}
+.memory-popup .stats .stat-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  padding: 0 4px 12px 4px;
 }
 
 /* ==================== */

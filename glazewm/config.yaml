@@ -193,6 +193,9 @@ window_rules:
       - window_process: { equals: 'nearby_share' }
       - window_process: { equals: "prismlauncher" }
         window_title: { regex: " - Prism Launcher" }
+      - window_process: { equals: 'WinDirStat' }
+      - window_process: { equals: 'studio64' }
+        window_title: { regex: 'Add Device|Device Manager' }
 
 
   - commands: ['set-floating --centered']
