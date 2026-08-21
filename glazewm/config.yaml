@@ -151,6 +151,7 @@ window_rules:
       - window_process: { equals: 'nvcplui' }
       - window_process: { equals: 'Taskmgr' }
       - window_process: { equals: 'SnippingTool' }
+      - window_process: { equals: 'gamingservicesui' }
 
       # Ignores picture-in-picture windows for browsers.
       - window_title: { regex: '[Pp]icture.in.[Pp]icture' }
@@ -180,13 +181,11 @@ window_rules:
       - window_process: { equals: 'WinRAR' }
       - window_process: { equals: 'OneDrive' }
       - window_process: { equals: 'kdeconnect-handler' }
-      # - window_process: { equals: 'firefox' }
-      #   window_title: { regex: 'Library' }
       - window_process: { equals: 'Minecraft.Windows' }
       - window_title: { regex: 'Minecraft' }
         window_class: { regex: 'Bedrock' }
       - window_process: { equals: 'xampp-control' }
-      - window_process: { equals: 'UnivsersalUninstaller' }
+      - window_process: { equals: 'UniversalUninstaller' }
       - window_process: { equals: 'BCUninstaller' }
       - window_process: { equals: 'VirtualBox' }
         window_title: { regex: 'Settings' }

@@ -124,6 +124,7 @@ widgets:
         color: "#89b4fa"
       callbacks:
         on_left: "toggle_menu"
+        on_right: "toggle_label"
       menu:
         enabled: true
         show_graph: true
@@ -135,7 +136,7 @@ widgets:
     options:
       gpu_index: 1
       label: " {info[temp]}°C"
-      label_alt: "<span>\uf4bc</span> {info[temp]}°C | {info[mem_used]} / {info[mem_total]}"
+      label_alt: " {info[temp]}°C | {info[mem_used]}"
       update_interval: 2000
       progress_bar:
         enabled: true
@@ -146,7 +147,7 @@ widgets:
         high: 90
       callbacks:
         on_left: "toggle_menu"
-        on_right: "toogle_label"
+        on_right: "toggle_label"
       menu:
         enabled: true
         show_graph: true
@@ -160,12 +161,12 @@ widgets:
         enabled: true
         color: "#cba6f7"
       label: " {virtual_mem_percent}% "
-      label_alt: "<span>\uefc5</span> {virtual_mem_outof}"
+      label_alt: " {virtual_mem_outof}"
       update_interval: 10000
       callbacks:
         on_left: "toggle_menu"
         on_middle: "exec cmd /c Taskmgr"
-        on_right: "toogle_label"
+        on_right: "toggle_label"
       menu:
         enabled: true
         show_graph: true
@@ -454,27 +455,12 @@ widgets:
         radius: 3
         offset: [ 1, 1 ]
 
-  # weather:
-  #   type: "yasb.weather.WeatherWidget"
-  #   options:
-  #     label: "<span>{icon}</span> {temp}"
-  #     api_key: ""
-  #     show_alerts: true
-  #     tooltip: true
-  #     update_interval: 1800
-  #     hide_decimal: true
-  #     units: "metric" 
-  #     location: "" 
-  #     callbacks:
-  #       on_left: "toggle_card"
-
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
       label: "<span>{icon}</span> {temp}"
       label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
       api_key: "$env:YASB_WEATHER_API_KEY" # Get your free API key from https://www.weatherapi.com/
-      show_alerts: true
       tooltip: true
       update_interval: 1800 # Update interval in seconds, Min 600 seconds
       hide_decimal: true
