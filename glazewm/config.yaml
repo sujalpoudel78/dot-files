@@ -49,7 +49,7 @@ gaps:
 
   # Gap between windows and the screen edge.
   outer_gap:
-    top: '1px'
+    top: '3px'
     right: '3px'
     left: '3px'
     bottom: '3px'
@@ -145,7 +145,8 @@ window_rules:
       - window_process: { equals: 'msiexec' }
       - window_process: { equals: 'winver' }
       - window_process: { equals: 'mmc' }
-      - window_title: { regex: '(?i)^.*(installer|uninstaller|setup wizard).*$' }
+      # - window_title: { regex: '(?i)^.*(installer|uninstaller|setup wizard).*$' }
+      - window_process: { equals: 'install' }
       - window_process: { equals: 'uninstall' }
       - window_process: { equals: 'SystemPropertiesComputerName' }
       - window_process: { equals: 'nvcplui' }
@@ -195,6 +196,8 @@ window_rules:
       - window_process: { equals: 'WinDirStat' }
       - window_process: { equals: 'studio64' }
         window_title: { regex: 'Add Device|Device Manager' }
+      - window_process: { equals: 'everything' }
+      - window_process: { equals: 'RevoUn' }
 
 
   - commands: ['set-floating --centered']
@@ -256,10 +259,10 @@ keybindings:
   # - commands: ['wm-enable-binding-mode --name resize']
   #   bindings: ['alt+r']
 
-  # Disables window management and all other keybindings until alt+shift+p
+  # Disables window management and all other keybindings until ctrl+alt+shift+p
   # is pressed again.
   - commands: ['wm-toggle-pause']
-    bindings: ['alt+shift+p']
+    bindings: ['ctrl+alt+shift+p']
 
   # Change tiling direction. This determines where new tiling windows will
   # be inserted.

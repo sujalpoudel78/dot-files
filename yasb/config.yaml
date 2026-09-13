@@ -39,6 +39,7 @@ bars:
         stretch: true
     widgets:
       left: [
+          # "home",
           "clock",
           "glazewm_workspaces",  
           "taskbar",
@@ -97,7 +98,7 @@ bars:
           "gpu",
       ]
       center: [
-          # "active_window",
+          "active_window",
         ]
       right: [
           "weather",
@@ -107,6 +108,41 @@ bars:
       ]
 widgets:
   
+  home:
+    type: "yasb.home.HomeWidget"
+    options:
+      label: "<span>\uf0c9</span>"
+      menu_list:
+      - { title: "User Home", path: "~" }
+      - { title: "Download", path: "~\\Downloads" }
+      - { title: "Documents", path: "~\\Documents" }
+      - { title: "Pictures", path: "~\\Pictures" }
+      - { title: "Sound Settings", command: "cmd.exe /c start ms-settings:sound" }
+      - { title: "Windows Settings", uri: "ms-settings:" }
+      - { separator: true }
+      - { title: "PowerShell", command: "powershell.exe", show_window: true }
+      # - { title: "Winget Update", command: "powershell.exe", args: ["-NoProfile", "-NoExit", "-Command", "winget upgrade"], show_window: true }
+      system_menu: true
+      power_menu: true
+      blur: true
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: "System"
+      offset_top: 6
+      offset_left: 0
+      alignment: "left"
+      direction: "down"
+      menu_labels:
+        shutdown: "Shutdown"
+        restart: "Restart"
+        hibernate: "Hibernate"
+        logout: "Logout"
+        lock: "Lock"
+        sleep: "Sleep"
+        system: "System Settings"
+        about: "About This PC"
+        task_manager: "Task Manager"
+
   glazewm_workspaces:
     type: "glazewm.workspaces.GlazewmWorkspacesWidget"
     options:
@@ -251,6 +287,7 @@ widgets:
         - "\uf028"  # Icon for 61-100% volume
       audio_menu:
         show_apps: true
+        show_apps_expanded: true
         blur: true
         round_corners: true
         round_corners_type: "small"
@@ -276,8 +313,8 @@ widgets:
     options:
       label: "\uf011"
       uptime: True
-      blur: False
-      blur_background: True
+      blur: false
+      blur_background: true
       animation_duration: 150
       button_row: 5
       buttons:
@@ -296,7 +333,7 @@ widgets:
       hide_empty: true
       callbacks:
         on_left: "toggle_media_menu"
-        on_middle: "toogle_label"
+        on_middle: "toggle_play_pause"
         on_right: "open_media_source"
       max_field_size:
         label: 25
@@ -305,14 +342,14 @@ widgets:
       controls_only: false
       controls_left: true
       controls_hide: true
-      thumbnail_alpha: 80
+      thumbnail_alpha: 100
       thumbnail_padding: 8
       thumbnail_corner_radius: 16
       icons:
-        prev_track: "\ue892"
-        next_track: "\ue893"
-        play: "\ue768"
-        pause: "\ue769"
+        prev_track: "\uf04a "
+        next_track: "\uf04e "
+        play: "\uf04b "
+        pause: "\uf04c "
       media_menu:
         show_volume_slider: true
         blur: false
@@ -333,16 +370,6 @@ widgets:
         pause: "\ue769"
         prev_track: "\ue892"
         next_track: "\ue893"
-      scrolling_label:
-        enabled: false
-        update_interval_ms: 33
-        style: "left"  # can be "left", "right", "bounce", "bounce-ease"
-        separator: " | "
-        label_padding: 1
-        # Easing curve params: https://www.desmos.com/calculator/j7eamemxzi
-        ease_slope: 20
-        ease_pos: 0.8
-        ease_min: 0.5
       label_shadow:
         enabled: true
         color: "black"
