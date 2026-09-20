@@ -10,7 +10,7 @@ bars:
       position: "top"
       center: true
     blur_effect:
-      enabled: false 
+      enabled: false
       acrylic: true 
       dark_mode: true
       round_corners: true
@@ -49,6 +49,7 @@ bars:
           "active_window",
         ]
       right: [
+        "wallpapers",
           "systray",
           "wifi",
           "volume",
@@ -106,6 +107,7 @@ bars:
           "glazewm_workspaces",  
           "clock24",
       ]
+
 widgets:
   
   home:
@@ -303,10 +305,28 @@ widgets:
     type: "yasb.battery.BatteryWidget"
     options:
       label: "<span>{icon}</span>{percent}%"
-      label_alt: "<span>{icon}</span> {percent}% | time: {time_remaining}"
+      label_alt: "<span>{icon}</span> {percent}% | {power} | time: {time_remaining}"
       # hide_unsupported: true
+      time_remaining_unlimited_icon: "Charging"
       charging_options:
         icon_format: "{charging_icon}" 
+      status_thresholds:
+        critical: 10
+        low: 25
+        medium: 75
+        high: 95
+        full: 100
+      status_icons:
+        icon_charging: "\uf0e7"
+        icon_critical: "\uf244"
+        icon_low: "\uf243"
+        icon_medium: "\uf242"
+        icon_high: "\uf241"
+        icon_full: "\uf240"
+      progress_bar:
+        enabled: false
+        progress_type: "circular"
+        color: "#94e2d5"
 
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
@@ -375,7 +395,9 @@ widgets:
         color: "black"
         radius: 3
         offset: [ 1, 1 ]
-
+      progress_bar:
+        enabled: false
+        alignment: "bottom"
   taskbar:
     type: "yasb.taskbar.TaskbarWidget"
     options:
@@ -397,11 +419,13 @@ widgets:
         enabled: false
         show: "focused"
         min_length: 10
-        max_length: 30
+        max_length: 20
       ignore_apps:
         processes: []
         titles: []
         classes: []
+      grouping:
+        enabled: true
 
   notifications:
     type: "yasb.notifications.NotificationsWidget"
@@ -536,3 +560,27 @@ widgets:
           temperature_icon: "\udb81\udd99"
           rain_icon: "\udb81\udd96"
           snow_icon: "\udb81\udd98"
+
+  wallpapers:
+    type: "yasb.wallpapers.WallpapersWidget"
+    options:
+      # class_name: "wallpaper-hidden"
+      label: "<span>\ue7aa</span>"
+      # Example path to folder with images. Can be a single string or a list of strings.
+      # image_path: "C:\\Users\\{Username}\\Images" 
+      image_path: C:\\Users\\ACER\\Pictures\\Wallpapers
+      change_automatically: true # Automatically change wallpaper
+      update_interval: 21600 # If change_automatically is true, update interval in seconds
+      engine:
+        enabled: true
+        animation: "circle" # circle/slide_top/diamond/split
+      gallery:
+        type: "magnified" # default/magnified/strip/slide - see "Gallery types" below
+        image_width: 220
+        orientation: "portrait" # landscape/portrait
+        image_corner_radius: 12
+        accent_color: "#cba6f7"
+      keybindings:
+        - keys: "ctrl+alt+w"
+          action: "toggle_gallery"
+          screen: "cursor"

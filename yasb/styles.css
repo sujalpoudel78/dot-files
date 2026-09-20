@@ -41,6 +41,19 @@
   /* was 0.75 before */
 }
 
+
+/* === REMOVE BAR SHADOW === */
+/* .yasb-bar,
+.yasb,
+.bar,
+.bar-container {
+  box-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+} */
+
+
+
 /* ================= */
 /* === BASE STYLES === */
 /* ================= */
@@ -84,13 +97,11 @@
   margin: 0 4px 0 0;
 }
 
-
-
 .tooltip {
-    background-color: var(--base);
-    border-radius: 12px;
-    color: var(--text);
-    padding: 5px 10px;
+  background-color: var(--base);
+  border-radius: 12px;
+  color: var(--text);
+  padding: 5px 10px;
 }
 
 /* ==================== */
@@ -800,6 +811,12 @@
   border-radius: 12px;
 }
 
+.taskbar-widget .app-container .app-count{
+  margin: 0 2px 0 0;
+  color: var(--mauve);
+  font-size: 13px;
+}
+
 /* ================= */
 /* === NOTIFICATION WIDGET === */
 /* ================= */
@@ -807,16 +824,11 @@
 .notification-widget {
   border-radius: 12px;
 }
+.notification-widget .icon,
+.notification-widget .label {
+  color: var(--blue);
+}
 
-/* === REMOVE BAR SHADOW === */
-/* .yasb-bar,
-.yasb,
-.bar,
-.bar-container {
-  box-shadow: none !important;
-  filter: none !important;
-  backdrop-filter: none !important;
-} */
 
 .notes-menu {
   min-width: 300px;
@@ -1151,3 +1163,24 @@
   color: var(--overlay0);
 }
 
+
+.media-widget .progress-bar {
+  max-height: 2px;       /* keep it thin so it fits in the reserved space */
+  /* margin: 0 4px; */
+  background-color: transparent;
+  border: none;
+}
+
+
+
+/* ==================== */
+/* === MEDIA WIDGET === */
+/* ==================== */
+
+.wallpapers-widget{ 
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  max-width: 0;
+  border: none;
+}
