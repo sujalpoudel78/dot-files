@@ -41,7 +41,6 @@
   /* was 0.75 before */
 }
 
-
 /* === REMOVE BAR SHADOW === */
 /* .yasb-bar,
 .yasb,
@@ -51,8 +50,6 @@
   filter: none !important;
   backdrop-filter: none !important;
 } */
-
-
 
 /* ================= */
 /* === BASE STYLES === */
@@ -74,6 +71,14 @@
   margin: 0;
   /* background-color: var(--crust); */
   /* border-radius: 12px; */
+}
+
+.yasb-bar.adaptive {
+    background-color: var(--crust);
+    -qproperty-railheight: 0;
+    -qproperty-islandradius: 16;
+    -qproperty-grouppadding: 3;
+    
 }
 
 /* Common widget styles */
@@ -811,7 +816,7 @@
   border-radius: 12px;
 }
 
-.taskbar-widget .app-container .app-count{
+.taskbar-widget .app-container .app-count {
   margin: 0 2px 0 0;
   color: var(--mauve);
   font-size: 13px;
@@ -828,7 +833,6 @@
 .notification-widget .label {
   color: var(--blue);
 }
-
 
 .notes-menu {
   min-width: 300px;
@@ -957,11 +961,12 @@
   background-color: var(--mantle);
 }
 .weather-card-today .label {
+  font-family: 'Comfortaa';
   font-size: 12px;
 }
 .weather-card-today .label.location {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 900;
 }
 .weather-card-today .label.alert {
   font-size: 12px;
@@ -988,13 +993,19 @@
 
 .weather-card-day .label {
   font-size: 12px;
+  font-family: 'Comfortaa';
 }
 
+.weather-card{
+  font-family: 'Comfortaa';
+  
+}
 .weather-card .hourly-container {
   min-height: 150px;
 }
 
 .weather-card .hourly-data {
+  font-family: 'Comfortaa';
   font-weight: bold;
 }
 
@@ -1012,6 +1023,7 @@
 
 /* Hourly forecast toggle buttons */
 .weather-card .hourly-data-buttons {
+  font-family: 'Comfortaa';
   margin: 0px;
 }
 .weather-card .hourly-data-button {
@@ -1163,24 +1175,187 @@
   color: var(--overlay0);
 }
 
-
 .media-widget .progress-bar {
-  max-height: 2px;       /* keep it thin so it fits in the reserved space */
+  max-height: 2px; /* keep it thin so it fits in the reserved space */
   /* margin: 0 4px; */
   background-color: transparent;
   border: none;
 }
 
+/* ======================== */
+/* === WALLPAPER WIDGET === */
+/* ======================== */
 
-
-/* ==================== */
-/* === MEDIA WIDGET === */
-/* ==================== */
-
-.wallpapers-widget{ 
+.wallpapers-widget {
   padding: 0;
   margin: 0;
   min-width: 0;
   max-width: 0;
   border: none;
+}
+
+
+/* =============================== */
+/* === AUDIO VISUALIZER WIDGET === */
+/* =============================== */
+
+.audio-visualizer-widget {
+    /* padding: 0; */
+    /* margin: 0; */
+}
+.audio-visualizer-widget .widget-container {
+    /* padding: 0; */
+    /* margin: 0; */
+    background-color: var(--crust);
+}
+.audio-visualizer-widget .audio-visualizer-canvas {
+    -qproperty-fillbrush: linear-gradient(to bottom, var(--mauve), var(--lavender), var(--blue));
+}
+
+
+
+
+.bluetooth-widget .icon.bt-off,
+.bluetooth-widget .label.bt-off {
+    color: #888;
+}
+.bluetooth-widget .icon.bt-on,
+.bluetooth-widget .label.bt-on {
+    color: #4cc2ff;
+}
+.bluetooth-widget .icon.bt-connected,
+.bluetooth-widget .label.bt-connected {
+    color: #00c800;
+}
+.bluetooth-menu {
+    background: rgba(28, 28, 28, 0.6);
+    min-width: 360px;
+    min-height: 480px;
+}
+.bluetooth-menu .header {
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.bluetooth-menu .header .title {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+.bluetooth-menu .header .power-button {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 14px;
+    margin-left: 8px;
+}
+.bluetooth-menu .header .power-button:checked {
+    background-color: #4cc2ff;
+    color: #000;
+}
+.bluetooth-menu .progress-bar {
+    min-height: 2px;
+    max-height: 2px;
+    color: #4cc2ff;
+}
+.bluetooth-menu .bluetooth-list {
+    background-color: transparent;
+}
+.bluetooth-menu .section {
+    background-color: transparent
+}
+.bluetooth-menu .section-title {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 12px 4px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.bluetooth-menu .error-message {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 0;
+    background-color: #92242d;
+    color: #e7bfc2;
+}
+.bluetooth-menu .bluetooth-item {
+    min-height: 44px;
+    padding: 6px 12px;
+    margin: 2px 4px;
+    border-radius: 6px;
+}
+.bluetooth-menu .bluetooth-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.bluetooth-menu .bluetooth-item.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+.bluetooth-menu .bluetooth-item .icon {
+    font-family: 'Segoe Fluent Icons';
+    font-size: 18px;
+    margin-right: 12px;
+    min-width: 28px;
+    font-weight: 400;
+}
+.bluetooth-menu .bluetooth-item .name {
+    font-size: 14px;
+    font-weight: 600;
+}
+.bluetooth-menu .bluetooth-item .status {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+}
+.bluetooth-menu .bluetooth-item .battery {
+    font-size: 13px;
+    font-weight: 600;
+    padding-right: 6px;
+}
+.bluetooth-menu .bluetooth-item .battery-icon {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Segoe Fluent Icons';
+}
+.bluetooth-menu .bluetooth-item .controls-container {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.bluetooth-menu .bluetooth-item .connect {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 4px 12px;
+    border-radius: 4px;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+}
+.bluetooth-menu .bluetooth-item .connect:hover {
+    background-color: rgba(255, 255, 255, 0.22);
+}
+.bluetooth-menu .footer {
+    padding: 8px 12px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.bluetooth-menu .footer .settings-button {
+    background-color: transparent;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.bluetooth-menu .footer .scan-icon {
+    font-family: 'Segoe Fluent Icons';
+    background-color: transparent;
+    border: none;
+    font-weight: 400;
+    min-width: 28px;
+    min-height: 28px;
+    color: #fff;
+    border-radius: 4px;
+}
+.bluetooth-menu .footer .scan-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }

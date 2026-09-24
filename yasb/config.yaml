@@ -4,6 +4,7 @@ debug: false
 bars:
   primary-bar:
     enabled: true
+    style: "bar"
     screens: ['primary'] 
     class_name: "yasb-bar"
     alignment:
@@ -52,6 +53,7 @@ bars:
         "wallpapers",
           "systray",
           "wifi",
+          "bluetooth",
           "volume",
           "battery",
           "notifications",
@@ -97,6 +99,7 @@ bars:
           "cpu",
           "memory",
           "gpu",
+          # "audio_visualizer",
       ]
       center: [
           "active_window",
@@ -279,8 +282,7 @@ widgets:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span> {level}"
-      label_alt: "{volume}"
-      slider_beep: false
+      slider_beep: true
       volume_icons:
         - "\ueee8"  # Icon for muted
         - "\uf026"  # Icon for 0-10% volume
@@ -564,15 +566,11 @@ widgets:
   wallpapers:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
-      # class_name: "wallpaper-hidden"
-      label: "<span>\ue7aa</span>"
-      # Example path to folder with images. Can be a single string or a list of strings.
-      # image_path: "C:\\Users\\{Username}\\Images" 
-      image_path: C:\\Users\\ACER\\Pictures\\Wallpapers
-      change_automatically: true # Automatically change wallpaper
-      update_interval: 21600 # If change_automatically is true, update interval in seconds
+      image_path: "C:\\Users\\ACER\\Pictures\\Wallpapers"
+      change_automatically: true
+      update_interval: 10800
       engine:
-        enabled: true
+        enabled: false
         animation: "circle" # circle/slide_top/diamond/split
       gallery:
         type: "magnified" # default/magnified/strip/slide - see "Gallery types" below
@@ -581,6 +579,104 @@ widgets:
         image_corner_radius: 12
         accent_color: "#cba6f7"
       keybindings:
-        - keys: "ctrl+alt+w"
+        - keys: "ctrl+alt+shift+w"
           action: "toggle_gallery"
           screen: "cursor"
+
+
+
+  audio_visualizer:
+    type: "yasb.audio_visualizer.AudioVisualizerWidget"
+    options:
+      style: bars
+      height: 16
+      smoothness: 80
+      sensitivity: 50
+      auto_gain: false
+      framerate: 60
+      freq_min: 500
+      freq_max: 12000
+      hide_idle: true
+      hide_idle_after: 2000
+      channels: mono
+      mono_option: average
+      reverse: false
+      mirror: false
+      bars:
+        count: 9
+        width: 6
+        gap: 3
+      waves:
+        width: 80
+      dots:
+        count: 24
+        size: 2
+        gap: 4
+
+
+  bluetooth:
+    type: "yasb.bluetooth.BluetoothWidget"
+    options:
+      label: "<span>{icon}</span>"
+      label_alt: "<span>{icon}</span>"
+      class_name: ""
+      label_no_device: "No devices connected"
+      label_device_separator: ", "
+      max_length: null
+      max_length_ellipsis: "..."
+      tooltip: true
+      icons:
+        bluetooth_on: ""
+        bluetooth_off: ""
+        bluetooth_connected: "\ue702"
+      device_aliases: []
+      keybindings: []
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+      menu_config:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        labels:
+          title: "Bluetooth"
+          your_devices: "Your devices"
+          new_devices: "New devices"
+          not_connected: "Not connected"
+          connected: "Connected"
+          more_settings: "More Bluetooth settings"
+          connect: "Connect"
+          disconnect: "Disconnect"
+          connecting: "Connecting"
+          disconnecting: "Disconnecting"
+          pair: "Pair"
+          manage: "Manage"
+          power_on: "On"
+          power_off: "Off"
+        device_icons:
+          headphones: "\ue7f6"
+          headset: "\ue95b"
+          speaker: "\ue7f5"
+          phone: "\ue8ea"
+          tablet: "\ue70a"
+          laptop: "\ue7f8"
+          computer: "\ue950"
+          keyboard: "\ue765"
+          mouse: "\ue962"
+          controller: "\ue7fc"
+          watch: "\ue918"
+          camera: "\ue722"
+          generic: "\ue702"
+          battery:
+            empty: "\ueba0"
+            low: "\ueba2"
+            medium: "\ueba5"
+            high: "\ueba8"
+            full: "\uebaa"
+          scan: "\ue72c"

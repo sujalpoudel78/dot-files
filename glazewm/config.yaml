@@ -302,8 +302,8 @@ keybindings:
   - commands: ['wm-reload-config']
     bindings: ['alt+shift+ctrl+r']
 
-  # Redraw all windows.
-  - commands: ['shell-exec pwsh -Command glazewm command wm-exit; glazewm']
+  # Restart GlazeWM
+  - commands: ['shell-exec powershell -Command glazewm command wm-exit; glazewm']
     bindings: ['ctrl+alt+shift+/']
 
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
@@ -317,6 +317,9 @@ keybindings:
 
   - commands: ['shell-exec firefox']
     bindings: ['ctrl+alt+b']
+
+  # - commands: ['shell-exec %LOCALAPPDATA%/Programs/Obsidian/Obsidian.exe']
+  #   bindings: ['ctrl+alt+o']
 
   # Focus the next/previous active workspace defined in `workspaces` config.
   - commands: ['focus --next-active-workspace']
