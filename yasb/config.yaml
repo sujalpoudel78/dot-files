@@ -40,7 +40,6 @@ bars:
         stretch: true
     widgets:
       left: [
-          # "home",
           "clock",
           "glazewm_workspaces",  
           "taskbar",
@@ -50,10 +49,9 @@ bars:
           "active_window",
         ]
       right: [
-        "wallpapers",
+          "wallpapers",
           "systray",
           "wifi",
-          "bluetooth",
           "volume",
           "battery",
           "notifications",
@@ -113,41 +111,6 @@ bars:
 
 widgets:
   
-  home:
-    type: "yasb.home.HomeWidget"
-    options:
-      label: "<span>\uf0c9</span>"
-      menu_list:
-      - { title: "User Home", path: "~" }
-      - { title: "Download", path: "~\\Downloads" }
-      - { title: "Documents", path: "~\\Documents" }
-      - { title: "Pictures", path: "~\\Pictures" }
-      - { title: "Sound Settings", command: "cmd.exe /c start ms-settings:sound" }
-      - { title: "Windows Settings", uri: "ms-settings:" }
-      - { separator: true }
-      - { title: "PowerShell", command: "powershell.exe", show_window: true }
-      # - { title: "Winget Update", command: "powershell.exe", args: ["-NoProfile", "-NoExit", "-Command", "winget upgrade"], show_window: true }
-      system_menu: true
-      power_menu: true
-      blur: true
-      round_corners: true
-      round_corners_type: "normal"
-      border_color: "System"
-      offset_top: 6
-      offset_left: 0
-      alignment: "left"
-      direction: "down"
-      menu_labels:
-        shutdown: "Shutdown"
-        restart: "Restart"
-        hibernate: "Hibernate"
-        logout: "Logout"
-        lock: "Lock"
-        sleep: "Sleep"
-        system: "System Settings"
-        about: "About This PC"
-        task_manager: "Task Manager"
-
   glazewm_workspaces:
     type: "glazewm.workspaces.GlazewmWorkspacesWidget"
     options:
@@ -177,7 +140,7 @@ widgets:
     options:
       gpu_index: 1
       label: " {info[temp]}°C"
-      label_alt: " {info[temp]}°C | {info[mem_used]}"
+      label_alt: " {info[temp]}°C | {info[mem_used]} | {info[power_draw]}W | {info[utilization]}%"
       update_interval: 2000
       progress_bar:
         enabled: true
@@ -570,7 +533,7 @@ widgets:
       change_automatically: true
       update_interval: 10800
       engine:
-        enabled: false
+        enabled: true
         animation: "circle" # circle/slide_top/diamond/split
       gallery:
         type: "magnified" # default/magnified/strip/slide - see "Gallery types" below
@@ -614,69 +577,3 @@ widgets:
         gap: 4
 
 
-  bluetooth:
-    type: "yasb.bluetooth.BluetoothWidget"
-    options:
-      label: "<span>{icon}</span>"
-      label_alt: "<span>{icon}</span>"
-      class_name: ""
-      label_no_device: "No devices connected"
-      label_device_separator: ", "
-      max_length: null
-      max_length_ellipsis: "..."
-      tooltip: true
-      icons:
-        bluetooth_on: ""
-        bluetooth_off: ""
-        bluetooth_connected: "\ue702"
-      device_aliases: []
-      keybindings: []
-      callbacks:
-        on_left: "toggle_menu"
-        on_middle: "do_nothing"
-        on_right: "do_nothing"
-      menu_config:
-        blur: true
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "System"
-        alignment: "right"
-        direction: "down"
-        offset_top: 6
-        offset_left: 0
-        labels:
-          title: "Bluetooth"
-          your_devices: "Your devices"
-          new_devices: "New devices"
-          not_connected: "Not connected"
-          connected: "Connected"
-          more_settings: "More Bluetooth settings"
-          connect: "Connect"
-          disconnect: "Disconnect"
-          connecting: "Connecting"
-          disconnecting: "Disconnecting"
-          pair: "Pair"
-          manage: "Manage"
-          power_on: "On"
-          power_off: "Off"
-        device_icons:
-          headphones: "\ue7f6"
-          headset: "\ue95b"
-          speaker: "\ue7f5"
-          phone: "\ue8ea"
-          tablet: "\ue70a"
-          laptop: "\ue7f8"
-          computer: "\ue950"
-          keyboard: "\ue765"
-          mouse: "\ue962"
-          controller: "\ue7fc"
-          watch: "\ue918"
-          camera: "\ue722"
-          generic: "\ue702"
-          battery:
-            empty: "\ueba0"
-            low: "\ueba2"
-            medium: "\ueba5"
-            high: "\ueba8"
-            full: "\uebaa"
-          scan: "\ue72c"

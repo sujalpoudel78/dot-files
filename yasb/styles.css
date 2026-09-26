@@ -730,7 +730,7 @@
 /* === HOME WIDGET === */
 /* ================= */
 .home-widget {
-  padding: 0 4px 0 8px;
+  padding: 0 6px 0 9px;
 }
 
 .home-widget .icon {
@@ -1199,163 +1199,422 @@
 /* === AUDIO VISUALIZER WIDGET === */
 /* =============================== */
 
-.audio-visualizer-widget {
-    /* padding: 0; */
-    /* margin: 0; */
-}
 .audio-visualizer-widget .widget-container {
-    /* padding: 0; */
-    /* margin: 0; */
     background-color: var(--crust);
 }
 .audio-visualizer-widget .audio-visualizer-canvas {
-    -qproperty-fillbrush: linear-gradient(to bottom, var(--mauve), var(--lavender), var(--blue));
+    -qproperty-fillbrush: var(--lavender);
 }
 
 
 
 
-.bluetooth-widget .icon.bt-off,
-.bluetooth-widget .label.bt-off {
-    color: #888;
+
+
+
+
+
+
+/* ============================= */
+/* CONTROL CENTER WIDGET          */
+/* ============================= */
+
+.control-center-widget {
+    padding: 0 5px 0 7px;
 }
-.bluetooth-widget .icon.bt-on,
-.bluetooth-widget .label.bt-on {
-    color: #4cc2ff;
+
+
+.control-center-widget .icon {
+    color: var(--blue);
 }
-.bluetooth-widget .icon.bt-connected,
-.bluetooth-widget .label.bt-connected {
-    color: #00c800;
+
+.control-center-widget .label {
+    color: var(--blue);
 }
-.bluetooth-menu {
-    background: rgba(28, 28, 28, 0.6);
+
+
+/* ============================= */
+/* POPUP WINDOW                   */
+/* ============================= */
+
+.control-center-menu {
+    background-color: var(--crust);
     min-width: 360px;
-    min-height: 480px;
+    border: 1px solid var(--surface1);
+    border-radius: 12px;
 }
-.bluetooth-menu .header {
-    padding: 12px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+
+/* ============================= */
+/* SECTIONS                       */
+/* ============================= */
+
+.control-center-menu .section {
+    background: transparent;
+    margin: 0;
+    padding: 16px 12px;
+    border-bottom: 1px solid var(--surface1);
 }
-.bluetooth-menu .header .title {
-    font-size: 14px;
-    font-weight: 600;
-    color: white;
+
+.control-center-menu .section.system-controls {
+    padding: 12px 16px 0 16px;
 }
-.bluetooth-menu .header .power-button {
-    background-color: rgba(255, 255, 255, 0.12);
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 4px 14px;
-    margin-left: 8px;
+
+.control-center-menu .section.sliders {
+    padding: 16px;
 }
-.bluetooth-menu .header .power-button:checked {
-    background-color: #4cc2ff;
-    color: #000;
+
+.control-center-menu .section.media,
+.control-center-menu .section.power,
+.control-center-menu .section.system-controls {
+    border-bottom: none;
 }
-.bluetooth-menu .progress-bar {
-    min-height: 2px;
-    max-height: 2px;
-    color: #4cc2ff;
-}
-.bluetooth-menu .bluetooth-list {
-    background-color: transparent;
-}
-.bluetooth-menu .section {
-    background-color: transparent
-}
-.bluetooth-menu .section-title {
-    font-size: 12px;
-    font-weight: 600;
-    padding: 10px 12px 4px;
-    color: rgba(255, 255, 255, 0.6);
-}
-.bluetooth-menu .error-message {
-    font-size: 12px;
-    font-weight: 600;
-    padding: 6px 0;
-    background-color: #92242d;
-    color: #e7bfc2;
-}
-.bluetooth-menu .bluetooth-item {
-    min-height: 44px;
-    padding: 6px 12px;
-    margin: 2px 4px;
-    border-radius: 6px;
-}
-.bluetooth-menu .bluetooth-item:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-}
-.bluetooth-menu .bluetooth-item.active {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-}
-.bluetooth-menu .bluetooth-item .icon {
-    font-family: 'Segoe Fluent Icons';
-    font-size: 18px;
-    margin-right: 12px;
-    min-width: 28px;
+
+
+/* ============================= */
+/* SHARED SEGOE FLUENT ICONS     */
+/* ============================= */
+
+.control-center-menu .section.system-controls .button,
+.control-center-menu .section.quick-actions .button .icon,
+.control-center-menu .section.sliders .slider .icon,
+.control-center-menu .section.sliders .slider .source-selector,
+.control-center-menu .section.power .plan-name .icon,
+.control-center-menu .section.power .mode-name .icon,
+.control-center-menu .section.media .button {
+    font-family: "Segoe Fluent Icons";
     font-weight: 400;
 }
-.bluetooth-menu .bluetooth-item .name {
+
+
+/* ============================= */
+/* SHARED HOVER / TRANSITIONS     */
+/* ============================= */
+
+.control-center-menu .section.quick-actions .button .icon,
+.control-center-menu .section.system-controls .button,
+.control-center-menu .section.sliders .slider .source-selector,
+.control-center-menu .section.power .plan-name,
+.control-center-menu .section.power .mode-name,
+.control-center-menu .section.media .button {
+    transition: background-color 0.08s, opacity 0.08s;
+    opacity: 1;
+}
+
+
+/* ============================= */
+/* PRESSED STATES                 */
+/* ============================= */
+
+.control-center-menu .section.system-controls .button:clicked,
+.control-center-menu .section.system-controls .button:pressed,
+.control-center-menu .section.quick-actions .button .icon:clicked,
+.control-center-menu .section.quick-actions .button .icon:pressed,
+.control-center-menu .section.sliders .slider .source-selector:clicked,
+.control-center-menu .section.sliders .slider .source-selector:pressed,
+.control-center-menu .section.power .plan-name:clicked,
+.control-center-menu .section.power .plan-name:pressed,
+.control-center-menu .section.power .mode-name:clicked,
+.control-center-menu .section.power .mode-name:pressed,
+.control-center-menu .section.media .button:clicked,
+.control-center-menu .section.media .button:pressed {
+    opacity: 0.5;
+}
+
+
+/* ============================= */
+/* DISABLED STATES               */
+/* ============================= */
+
+.control-center-menu .section.quick-actions .button.disabled .title,
+.control-center-menu .section.quick-actions .button.disabled .icon,
+.control-center-menu .section.sliders .slider.disabled,
+.control-center-menu .section.media .button.disabled,
+.control-center-menu .section.media .button.disabled:hover {
+    opacity: 0.5;
+}
+
+
+/* ============================= */
+/* SYSTEM CONTROLS               */
+/* ============================= */
+
+.control-center-menu .section.system-controls .button {
+    background-color: var(--surface0);
+    border-radius: 16px;
+
+    min-height: 32px;
+    max-height: 32px;
+    min-width: 32px;
+    max-width: 32px;
+
     font-size: 14px;
-    font-weight: 600;
+    color: var(--text);
+
+    transition: background-color 0.08s, opacity 0.08s;
 }
-.bluetooth-menu .bluetooth-item .status {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.6);
-    font-weight: 600;
+
+.control-center-menu .section.system-controls .button:hover {
+    background-color: var(--surface1);
+    color: var(--mauve);
 }
-.bluetooth-menu .bluetooth-item .battery {
-    font-size: 13px;
-    font-weight: 600;
-    padding-right: 6px;
-}
-.bluetooth-menu .bluetooth-item .battery-icon {
-    font-size: 18px;
-    font-weight: 400;
-    font-family: 'Segoe Fluent Icons';
-}
-.bluetooth-menu .bluetooth-item .controls-container {
-    padding-top: 8px;
-    padding-bottom: 8px;
-}
-.bluetooth-menu .bluetooth-item .connect {
-    background-color: rgba(255, 255, 255, 0.15);
-    padding: 4px 12px;
-    border-radius: 4px;
-    border: none;
-    font-size: 12px;
-    font-weight: 600;
-}
-.bluetooth-menu .bluetooth-item .connect:hover {
-    background-color: rgba(255, 255, 255, 0.22);
-}
-.bluetooth-menu .footer {
-    padding: 8px 12px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-.bluetooth-menu .footer .settings-button {
-    background-color: transparent;
-    border: none;
-    font-size: 12px;
-    font-weight: 600;
+
+
+/* ============================= */
+/* QUICK ACTIONS                  */
+/* ============================= */
+
+.control-center-menu .section.quick-actions .button {
+    margin: 0 4px;
     cursor: pointer;
 }
-.bluetooth-menu .footer .scan-icon {
-    font-family: 'Segoe Fluent Icons';
-    background-color: transparent;
+
+.control-center-menu .section.quick-actions .button .icon {
+    font-size: 16px;
+
+    background-color: var(--surface0);
+    border: 1px solid var(--surface1);
+
+    min-height: 48px;
+    border-radius: 6px;
+
+    color: var(--text);
+}
+
+.control-center-menu .section.quick-actions .button .icon:hover {
+    background-color: var(--surface1);
+    border: 1px solid var(--overlay0);
+    color: var(--mauve);
+}
+
+
+/* Active */
+.control-center-menu .section.quick-actions .button.active .icon {
+    background-color: var(--mauve);
+    border: 1px solid var(--mauve);
+    color: var(--crust);
+}
+
+.control-center-menu .section.quick-actions .button.active .icon:hover {
+    background-color: var(--lavender);
+    border: 1px solid var(--lavender);
+    color: var(--crust);
+}
+
+
+/* Active pressed */
+.control-center-menu .section.quick-actions .button.active .icon:pressed {
+    background-color: var(--mauve);
+    border: 1px solid var(--mauve);
+}
+
+
+/* Disabled */
+.control-center-menu .section.quick-actions .button.disabled .icon:hover {
+    background-color: var(--surface0);
+    border: 1px solid var(--surface1);
+}
+
+.control-center-menu .section.quick-actions .button .title {
+    font-size: 12px;
+    margin: 4px 0 8px 0;
+    padding: 0;
+    font-weight: 600;
+    color: var(--text);
+}
+
+
+/* ============================= */
+/* SLIDERS                        */
+/* ============================= */
+
+.control-center-menu .section.sliders .slider {
+    background: transparent;
     border: none;
-    font-weight: 400;
-    min-width: 28px;
-    min-height: 28px;
-    color: #fff;
+    min-height: 34px;
+    margin: 0 4px;
+}
+
+.control-center-menu .section.sliders .slider .icon {
+    font-size: 16px;
+    color: var(--mauve);
+    min-width: 36px;
+}
+
+.control-center-menu .section.sliders .slider .value {
+    min-width: 36px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.control-center-menu .section.sliders .slider .source-selector {
+    font-size: 12px;
+    color: var(--subtext0);
+
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+
+    background-color: transparent;
+    margin-left: 4px;
+}
+
+.control-center-menu .section.sliders .slider .source-selector:hover {
+    background-color: var(--surface0);
+    color: var(--mauve);
+}
+
+
+/* ============================= */
+/* POWER PLAN & POWER MODE        */
+/* ============================= */
+
+.control-center-menu .section.power .plan-name,
+.control-center-menu .section.power .mode-name {
+    background: var(--surface0);
+    border: 1px solid var(--surface1);
+    border-radius: 6px;
+
+    min-height: 36px;
+    margin: 0 4px;
+    padding: 6px 10px;
+
+    cursor: pointer;
+}
+
+.control-center-menu .section.power .plan-name:hover,
+.control-center-menu .section.power .mode-name:hover {
+    background: var(--surface1);
+    border-color: var(--overlay0);
+}
+
+.control-center-menu .section.power .mode-name.disabled,
+.control-center-menu .section.power .mode-name.disabled:hover {
+    opacity: 0.5;
+    background: var(--surface0);
+}
+
+.control-center-menu .section.power .plan-name .title,
+.control-center-menu .section.power .mode-name .title {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--subtext0);
+}
+
+.control-center-menu .section.power .plan-name .subtext,
+.control-center-menu .section.power .mode-name .subtext {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.control-center-menu .section.power .plan-name .icon,
+.control-center-menu .section.power .mode-name .icon {
+    color: var(--subtext0);
+    font-size: 14px;
+}
+
+
+/* ============================= */
+/* MEDIA CONTROLS                 */
+/* ============================= */
+
+.control-center-menu .section.media {
+    background-color: var(--surface0);
+    padding: 12px;
+    border-top: 1px solid var(--surface1);
+}
+
+.control-center-menu .section.media .track-info {
+    padding-left: 8px;
+}
+
+.control-center-menu .section.media .title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.control-center-menu .section.media .subtext {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--subtext0);
+}
+
+.control-center-menu .section.media .button {
+    font-size: 14px;
+
+    background-color: transparent;
+
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+
+    border-radius: 6px;
+    margin: 0 0 0 4px;
+
+    color: var(--text);
+}
+
+.control-center-menu .section.media .button:hover {
+    background-color: var(--surface1);
+    color: var(--mauve);
+}
+
+.control-center-menu .section.media .button.disabled,
+.control-center-menu .section.media .button.disabled:hover {
+    background-color: transparent;
+}
+
+
+/* ============================= */
+/* CONTEXT MENUS                  */
+/* ============================= */
+
+.control-center-menu .context-menu {
+    background-color: var(--surface0);
+    padding: 4px 0;
+    font-family: "Segoe UI Variable", "Segoe UI";
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--text);
+}
+
+.control-center-menu .context-menu::item {
+    background-color: transparent;
+    padding: 6px 12px;
+    margin: 2px 6px;
     border-radius: 4px;
+    min-width: 100px;
 }
-.bluetooth-menu .footer .scan-icon:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+
+.control-center-menu .context-menu::item:selected {
+    background-color: var(--surface1);
+    color: var(--text);
 }
+
+.control-center-menu .context-menu::separator {
+    height: 1px;
+    background-color: var(--surface1);
+    margin: 4px 0;
+}
+
+.control-center-menu .context-menu::indicator:unchecked {
+    width: 4px;
+    height: 12px;
+    margin-left: 0;
+    color: transparent;
+    background-color: transparent;
+}
+
+.control-center-menu .context-menu::indicator:checked {
+    width: 4px;
+    height: 12px;
+    background-color: var(--mauve);
+    border-radius: 2px;
+    margin-left: 0;
+}
+
+

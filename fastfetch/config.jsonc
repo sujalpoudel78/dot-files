@@ -3,7 +3,13 @@
   "display": {
     "separator": " "
   },
-  "logo": {},
+  "logo": {
+    "type": "file",
+    "source": "%USERPROFILE%/.config/dot-files/fastfetch/ascii.txt",
+    "color": {
+      "1": "#8aadf4"
+  }
+  },
   "modules": [
     "break",
     {
@@ -17,7 +23,7 @@
     "break",
     {
       "type": "os",
-      "key": "", //
+      "key": "", // 
       "keyColor": "#74C7EC"
     },
     {
