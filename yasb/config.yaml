@@ -46,7 +46,7 @@ bars:
           "media",
       ]
       center: [
-          "active_window",
+          # "active_window",
         ]
       right: [
           "wallpapers",
@@ -54,7 +54,7 @@ bars:
           "wifi",
           "volume",
           "battery",
-          "notifications",
+          "notifications-grouper"
       ]
 
   secondary-bar:
@@ -100,7 +100,7 @@ bars:
           # "audio_visualizer",
       ]
       center: [
-          "active_window",
+          # "active_window",
         ]
       right: [
           "weather",
@@ -395,7 +395,7 @@ widgets:
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
-      label: "<span>\uf476</span> {count}"
+      label: "{count}"
       label_alt: "{count} notifications"
       hide_empty: true
       tooltip: true
@@ -420,9 +420,6 @@ widgets:
       pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
       show_unpinned: false
       show_unpinned_button: true
-      show_battery: false
-      show_volume: false
-      show_network: false
       btn_shadow:
         enabled: true
         color: "black"
@@ -511,7 +508,7 @@ widgets:
         direction: "down"
         icon_size: 64
         show_hourly_forecast: true
-        time_format: "24h" 
+        time_format: "12h" 
         hourly_point_spacing: 76
         hourly_icon_size: 32 
         icon_smoothing: true 
@@ -525,6 +522,14 @@ widgets:
           temperature_icon: "\udb81\udd99"
           rain_icon: "\udb81\udd96"
           snow_icon: "\udb81\udd98"
+        weather_animation:
+          enabled: true
+          snow_overrides_rain: true
+          temp_line_animation_style: both # can be "rain", "snow", "both", or "none"
+          rain_effect_intensity: 0.6 # 0.01 - 10.0
+          snow_effect_intensity: 0.6 # 0.01 - 10.0
+          scale_with_chance: true
+          enable_debug: false
 
   wallpapers:
     type: "yasb.wallpapers.WallpapersWidget"
@@ -533,7 +538,7 @@ widgets:
       change_automatically: true
       update_interval: 10800
       engine:
-        enabled: true
+        enabled: false
         animation: "circle" # circle/slide_top/diamond/split
       gallery:
         type: "magnified" # default/magnified/strip/slide - see "Gallery types" below
@@ -576,4 +581,25 @@ widgets:
         size: 2
         gap: 4
 
+  dnd:
+    type: "yasb.dnd.DndWidget"
+    options:
+      label: "{icon}"
+      default_active_mode: "priority"
+      callbacks:
+        on_left: "exec notification_center"
+        on_right: "toggle_status"
+        on_middle: "cycle_status"
+      icons:
+        disabled: "\uf0f3"
+        priority: "\uf186" 
+        alarms: "\uf1f6" 
 
+  notifications-grouper:
+    type: "yasb.grouper.GrouperWidget"
+    options:
+      class_name: "notifications-grouper"
+      widgets: [
+        "dnd",
+        "notifications"
+      ]

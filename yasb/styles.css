@@ -827,12 +827,19 @@
 /* ================= */
 
 .notification-widget {
+  padding: 0;
+  margin: 0;
   border-radius: 12px;
 }
 .notification-widget .icon,
 .notification-widget .label {
-  color: var(--blue);
+  color: var(--text);
 }
+
+
+/* ================= */
+/* === NOTES WIDGET === */
+/* ================= */
 
 .notes-menu {
   min-width: 300px;
@@ -1040,6 +1047,21 @@
   color: #fff;
   background-color: var(--surface0);
 }
+
+
+
+
+
+.weather-card .hourly-data .hourly-rain-animation {
+    color: rgba(150, 200, 255, 40); /* Rain color */
+    background-color: rgba(0, 0, 0, 0.1); /* Rain background color */
+}
+
+.weather-card .hourly-data .hourly-snow-animation {
+    color: rgba(255, 255, 255, 150); /* Snow color */
+    background-color: rgba(0, 0, 0, 0.1); /* Snow background color */
+}
+
 
 /* ==================== */
 /* === MEDIA WIDGET === */
@@ -1570,51 +1592,113 @@
 
 
 /* ============================= */
-/* CONTEXT MENUS                  */
+/*          CONTEXT MENUS        */
 /* ============================= */
 
 .control-center-menu .context-menu {
-    background-color: var(--surface0);
-    padding: 4px 0;
-    font-family: "Segoe UI Variable", "Segoe UI";
-    font-weight: 600;
-    font-size: 12px;
-    color: var(--text);
+  background-color: var(--surface0);
+  padding: 4px 0;
+  font-family: "Segoe UI Variable", "Segoe UI";
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--text);
 }
 
 .control-center-menu .context-menu::item {
-    background-color: transparent;
-    padding: 6px 12px;
-    margin: 2px 6px;
-    border-radius: 4px;
-    min-width: 100px;
+  background-color: transparent;
+  padding: 6px 12px;
+  margin: 2px 6px;
+  border-radius: 4px;
+  min-width: 100px;
 }
 
 .control-center-menu .context-menu::item:selected {
-    background-color: var(--surface1);
-    color: var(--text);
+  background-color: var(--surface1);
+  color: var(--text);
 }
 
 .control-center-menu .context-menu::separator {
-    height: 1px;
-    background-color: var(--surface1);
-    margin: 4px 0;
+  height: 1px;
+  background-color: var(--surface1);
+  margin: 4px 0;
 }
 
 .control-center-menu .context-menu::indicator:unchecked {
-    width: 4px;
-    height: 12px;
-    margin-left: 0;
-    color: transparent;
-    background-color: transparent;
+  width: 4px;
+  height: 12px;
+  margin-left: 0;
+  color: transparent;
+  background-color: transparent;
 }
 
 .control-center-menu .context-menu::indicator:checked {
-    width: 4px;
-    height: 12px;
-    background-color: var(--mauve);
-    border-radius: 2px;
-    margin-left: 0;
+  width: 4px;
+  height: 12px;
+  background-color: var(--mauve);
+  border-radius: 2px;
+  margin-left: 0;
 }
 
+
+
+
+
+
+
+
+
+
+/* ============================= */
+/*          DND WIDGET           */
+/* ============================= */
+
+.dnd-widget {
+  border-radius: 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.dnd-widget .icon {
+  font-size: 15px;
+}
+
+/* Disabled - Blue */
+.dnd-widget .icon.status-disabled {
+  color: var(--blue); 
+  font-size: 15px;
+}
+.dnd-widget .label.status-disabled {
+  color: var(--blue); 
+  font-size: 15px;
+}
+
+/* Priority Only - Yellow */
+.dnd-widget .icon.status-priority {
+  color: var(--yellow); 
+  font-size: 15px;
+}
+.dnd-widget .label.status-priority {
+  font-size: 15px;
+  color: var(--yellow); 
+}
+
+/* Alarms Only - Red */
+.dnd-widget .icon.status-alarms {
+  color: var(--red); 
+  font-size: 15px;
+}
+.dnd-widget .label.status-alarms {
+  color: var(--red); 
+  font-size: 15px;
+}
+
+
+/* ============================= */
+/*     NOTIFICATIONS GROUPER      */
+/* ============================= */
+
+
+.notifications-grouper{
+  background-color: var(--crust);
+}
 
