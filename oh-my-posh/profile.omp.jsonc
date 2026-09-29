@@ -41,7 +41,7 @@
           "foreground": "p:pink",
           "properties": {
             "folder_icon": "\ue5fe",
-            "home_icon": "~ ",
+            "home_icon": "~",
             "style": "full"
           },
           "style": "plain",
