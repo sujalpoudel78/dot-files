@@ -104,7 +104,7 @@ bars:
           "active_window",
         ]
       right: [
-          "weather",
+          "open_meteo",
           "notes",
           "glazewm_workspaces",  
           "clock24",
@@ -321,7 +321,7 @@ widgets:
         on_middle: "toggle_play_pause"
         on_right: "open_media_source"
       max_field_size:
-        label: 25
+        label: 21
         label_alt: 45
       show_thumbnail: false
       controls_only: false
@@ -468,17 +468,16 @@ widgets:
         radius: 3
         offset: [ 1, 1 ]
 
-  weather:
-    type: "yasb.weather.WeatherWidget"
+  open_meteo:
+    type: "yasb.open_meteo.OpenMeteoWidget"
     options:
       label: "<span>{icon}</span> {temp}"
       label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
-      api_key: "$env:YASB_WEATHER_API_KEY" # Get your free API key from https://www.weatherapi.com/
       tooltip: true
-      update_interval: 1800 # Update interval in seconds, Min 600 seconds
+      update_interval: 1800
       hide_decimal: true
-      units: "metric" # Can be 'metric' or 'imperial'
-      location: "$env:YASB_WEATHER_LOCATION" # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
+      units: "metric"
+      forecast_days: 7
       callbacks:
         on_left: "toggle_card"
         on_middle: "do_nothing"
@@ -488,12 +487,12 @@ widgets:
         clearNight: "\ue32b"
         cloudyDay: "\ue312"
         cloudyNight: "\ue311"
+        drizzleDay: "\udb81\ude7e"
+        drizzleNight: "\udb81\ude7e"
         rainyDay: "\ue308"
         rainyNight: "\ue333"
         snowyDay: "\ue30a"
         snowyNight: "\ue335"
-        blizzardDay: "\udb83\udf36"
-        blizzardNight: "\udb83\udf36"
         foggyDay: "\ue303"
         foggyNight: "\ue346"
         thunderstormDay: "\ue30f"
@@ -508,29 +507,31 @@ widgets:
         direction: "down"
         icon_size: 64
         show_hourly_forecast: true
-        time_format: "12h" 
+        time_format: "12h"
         hourly_point_spacing: 76
-        hourly_icon_size: 32 
-        icon_smoothing: true 
-        temp_line_width: 2 
+        hourly_icon_size: 32
+        icon_smoothing: true
+        temp_line_width: 2
         current_line_color: "#8EAEE8"
-        current_line_width: 1 
+        current_line_width: 1
         current_line_style: "dot"
-        hourly_forecast_buttons: 
-          enabled: true 
-          default_view: "temperature" 
+        hourly_gradient:
+          enabled: false
+          top_color: "#8EAEE8"
+          bottom_color: "#2A3E68"
+        hourly_forecast_buttons:
+          enabled: true
+          default_view: "temperature"
           temperature_icon: "\udb81\udd99"
           rain_icon: "\udb81\udd96"
           snow_icon: "\udb81\udd98"
         weather_animation:
           enabled: true
           snow_overrides_rain: true
-          temp_line_animation_style: both # can be "rain", "snow", "both", or "none"
-          rain_effect_intensity: 0.6 # 0.01 - 10.0
-          snow_effect_intensity: 0.6 # 0.01 - 10.0
+          temp_line_animation_style: both
+          rain_effect_intensity: 0.6
+          snow_effect_intensity: 0.6
           scale_with_chance: true
-          enable_debug: false
-
   wallpapers:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
@@ -619,7 +620,7 @@ widgets:
       icons:
         bluetooth_on: ""
         bluetooth_off: ""
-        bluetooth_connected: "\uf294"
+        bluetooth_connected: "\udb80\udcb1" 
       callbacks:
         on_left: "toggle_menu"
         on_middle: "do_nothing"

@@ -917,123 +917,102 @@
   color: var(--red);
 }
 
-/* ==================== */
-/* === WEATHER WIDGET === */
-/* ==================== */
-.weather-widget .icon,
-.weather-widget .label {
+/* ========================= */
+/* === OPEN-METEO WIDGET === */
+/* ========================= */
+.open-meteo-widget .icon,
+.open-meteo-widget .label {
   margin: 0 2px 1px 0;
   color: var(--text);
 }
 
 /* Individual weather icons */
-.weather-widget .icon.sunnyDay {
+.open-meteo-widget .icon.sunnyDay {
   color: var(--yellow);
 }
-.weather-widget .icon.clearNight {
+.open-meteo-widget .icon.clearNight {
   color: var(--blue);
 }
-.weather-widget .icon.cloudyDay {
+.open-meteo-widget .icon.cloudyDay,
+.open-meteo-widget .icon.cloudyNight {
   color: var(--overlay2);
 }
-.weather-widget .icon.cloudyNight {
-  color: var(--overlay2);
-}
-.weather-widget .icon.rainyDay {
+.open-meteo-widget .icon.drizzleDay,
+.open-meteo-widget .icon.drizzleNight,
+.open-meteo-widget .icon.rainyDay,
+.open-meteo-widget .icon.rainyNight {
   color: var(--blue);
 }
-.weather-widget .icon.rainyNight {
-  color: var(--blue);
-}
-.weather-widget .icon.snowyDay {
+.open-meteo-widget .icon.snowyDay {
   color: var(--subtext1);
 }
-.weather-widget .icon.snowyNight,
-.weather-widget .icon.blizzardDay,
-.weather-widget .icon.blizzardNight,
-.weather-widget .icon.foggyDay,
-.weather-widget .icon.foggyNight,
-.weather-widget .icon.thunderstormDay,
-.weather-widget .icon.thunderstormNight,
-.weather-widget .icon.default {
+.open-meteo-widget .icon.snowyNight,
+.open-meteo-widget .icon.foggyDay,
+.open-meteo-widget .icon.foggyNight,
+.open-meteo-widget .icon.thunderstormDay,
+.open-meteo-widget .icon.thunderstormNight,
+.open-meteo-widget .icon.default {
   color: var(--text);
 }
 
 /* Weather card style */
-.weather-card {
+.open-meteo-card {
   background-color: var(--mantle);
+  font-family: "Comfortaa";
 }
-.weather-card-today {
-  /* border: 1px solid #282936; */
+.open-meteo-card-today {
   border-radius: 8px;
   background-color: var(--mantle);
 }
-.weather-card-today .label {
+.open-meteo-card-today .label {
   font-family: "Comfortaa";
   font-size: 12px;
 }
-.weather-card-today .label.location {
+.open-meteo-card-today .label.location {
   font-size: 24px;
   font-weight: 900;
 }
-.weather-card-today .label.alert {
-  font-size: 12px;
-  font-weight: 700;
-  background-color: rgba(247, 199, 42, 0.05);
-  border: 1px solid rgba(247, 209, 42, 0.1);
-  color: rgba(196, 181, 162, 0.85);
-  border-radius: 6px;
-  padding: 5px 0;
-}
-.weather-card-day {
+
+.open-meteo-card-day {
   border: 1px solid var(--surface0);
   border-radius: 8px;
 }
-
-.weather-card-day.active {
-  background-color: var(--surface0);
-  /* border: 1px solid rgba(50, 50, 75, 1); */
-}
-
-.weather-card-day:hover {
+.open-meteo-card-day.active {
   background-color: var(--surface0);
 }
-
-.weather-card-day .label {
+.open-meteo-card-day:hover {
+  background-color: var(--surface0);
+}
+.open-meteo-card-day .day-name,
+.open-meteo-card-day .day-temp-max,
+.open-meteo-card-day .day-temp-min {
   font-size: 12px;
   font-family: "Comfortaa";
 }
 
-.weather-card {
-  font-family: "Comfortaa";
-}
-.weather-card .hourly-container {
+.open-meteo-card .hourly-container {
   min-height: 150px;
 }
-
-.weather-card .hourly-data {
+.open-meteo-card .hourly-data {
   font-family: "Comfortaa";
   font-weight: bold;
 }
-
-.weather-card .hourly-data.temperature {
-  background-color: var(--yellow); /* Temperature curve & line color */
+.open-meteo-card .hourly-data.temperature {
+  background-color: var(--yellow);
 }
-
-.weather-card .hourly-data.rain {
-  background-color: var(--blue); /* Rain curve & line color */
+.open-meteo-card .hourly-data.rain {
+  background-color: var(--blue);
 }
-
-.weather-card .hourly-data.snow {
-  background-color: #a0c4ff; /* Snow curve & line color */
+.open-meteo-card .hourly-data.snow {
+  background-color: #a0c4ff;
 }
 
 /* Hourly forecast toggle buttons */
-.weather-card .hourly-data-buttons {
+.open-meteo-card .hourly-data-buttons {
   font-family: "Comfortaa";
   margin: 0px;
 }
-.weather-card .hourly-data-button {
+.open-meteo-card .hourly-data-button {
   border-radius: 4px;
   min-height: 24px;
   min-width: 24px;
@@ -1043,20 +1022,20 @@
   color: var(--text);
   border: 1px solid transparent;
 }
-.weather-card .hourly-data-button.active {
+.open-meteo-card .hourly-data-button.active {
   color: #fff;
   background-color: var(--surface0);
 }
 
-.weather-card .hourly-data .hourly-rain-animation {
-  color: rgba(150, 200, 255, 40); /* Rain color */
-  background-color: rgba(0, 0, 0, 0.1); /* Rain background color */
+.open-meteo-card .hourly-data .hourly-rain-animation {
+  color: rgba(150, 200, 255, 40);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.open-meteo-card .hourly-data .hourly-snow-animation {
+  color: rgba(255, 255, 255, 150);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-.weather-card .hourly-data .hourly-snow-animation {
-  color: rgba(255, 255, 255, 150); /* Snow color */
-  background-color: rgba(0, 0, 0, 0.1); /* Snow background color */
-}
 
 /* ==================== */
 /* === MEDIA WIDGET === */
@@ -1198,6 +1177,7 @@
   background-color: transparent;
   border: none;
 }
+
 
 /* ======================== */
 /* === WALLPAPER WIDGET === */

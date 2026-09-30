@@ -118,7 +118,7 @@ window_behavior:
       maximized: false
 
       # Whether to show fullscreen windows as always on top.
-      shown_on_top: true
+      shown_on_top: false
 
 workspaces:
   - name: '1'
